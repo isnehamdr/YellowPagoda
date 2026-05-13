@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+
+
+h1, h2{
+
+    font-family: "Marcellus", serif;
+
+}
+
+body{
+    overflow-x: hidden;
+}
+
+
+p,a, button, label {
+
+    font-family: "Jost", sans-serif;
+}
+
+/* Hide by default, show only on screens 1024px and wider */
+.custom-button {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .custom-button {
+    display: inline-flex;
+  }
+}
