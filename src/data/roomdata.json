@@ -1,0 +1,187 @@
+[
+  {
+    "id": 1,
+    "slug": "deluxe-king-room",
+    "breadcrumb": "125 m² / Lake View / 1 Bedroom",
+    "title": "Deluxe King Room",
+    "area": "125 m²",
+    "guests": 3,
+    "beds": "1 King Bed",
+    "bathrooms": "1 Bathroom",
+    "description": "Experience ultimate comfort and luxury in our spacious Deluxe King Room. Thoughtfully designed with refined furnishings, premium amenities, and sweeping views that make every stay truly memorable.",
+    "detailDescription": [
+      "Experience ultimate comfort and luxury in our spacious Deluxe King Room. Thoughtfully designed with refined furnishings, premium amenities, and sweeping lake views, it creates a restful retreat for both short escapes and longer stays.",
+      "From the plush king bed to the calm seating corner and elegant bathroom, every detail is arranged to deliver a warm, refined stay with the signature hospitality of Yellow Pagoda."
+    ],
+    "bookingLink": "https://hotelyellowpagoda.com/booking/?room-type=5013586",
+    "amenities": ["wifi", "tv", "bath", "couch", "sink", "bed", "coffee", "beach"],
+    "familyFeatures": [
+      { "label": "Kids Swimming Pool" },
+      { "label": "Extra Bed Available" },
+      { "label": "Laundry Support" }
+    ],
+    "inclusions": [
+      "Private lake-view seating area",
+      "Premium king-size bed setup",
+      "Complimentary tea and coffee station",
+      "Flat-screen TV with cable channels",
+      "Attached bathroom with hot water",
+      "Wardrobe and luggage space"
+    ],
+    "images": [
+      "/images/rooms/imgi_4_deluxe-king.jpg",
+        "/images/d1.jpg",
+        "/images/d3.jpg",
+        "/images/d4.jpg",
+        "/images/d5.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "deluxe-twin-room",
+    "breadcrumb": "125 m² / Garden View / 1 Bedroom",
+    "title": "Deluxe Twin Room",
+    "area": "125 m²",
+    "guests": 3,
+    "beds": "2 Twin Beds",
+    "bathrooms": "1 Bathroom",
+    "description": "Relax in style with our elegant Deluxe Twin Room, perfect for two. Featuring warm tones, modern comforts, and a tranquil garden outlook that invites you to unwind completely.",
+    "detailDescription": [
+      "Relax in style with our elegant Deluxe Twin Room, a bright and welcoming space tailored for friends, colleagues, or small families seeking comfort and convenience.",
+      "With twin bedding, calming interiors, and a refreshing garden outlook, this room balances practicality and warmth while keeping premium amenities close at hand."
+    ],
+    "bookingLink": "https://hotelyellowpagoda.com/booking/?room-type=5013587",
+    "amenities": ["wifi", "tv", "bath", "couch", "sink", "bed", "coffee", "beach"],
+    "familyFeatures": [
+      { "label": "Garden-side Stay" },
+      { "label": "Twin Bed Setup" },
+      { "label": "Daily Housekeeping" }
+    ],
+    "inclusions": [
+      "Garden-facing room ambiance",
+      "Two comfortable twin beds",
+      "Complimentary bottled water",
+      "Cable TV and Wi-Fi access",
+      "Hot shower with bath essentials",
+      "Workspace and storage area"
+    ],
+    "images": [
+      "/images/rooms/imgi_5_deluxe-twin.jpg",
+         "/images/d1.jpg",
+        "/images/d3.jpg",
+        "/images/d4.jpg",
+        "/images/d5.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "superior-king-room",
+    "breadcrumb": "125 m² / Mountain View / 1 Bedroom",
+    "title": "Superior King Room",
+    "area": "125 m²",
+    "guests": 3,
+    "beds": "1 King Bed",
+    "bathrooms": "1 Bathroom",
+    "description": "Indulge in sophistication and comfort with our spacious Superior King Room. Elevated finishes, a plush king bed, and panoramic mountain vistas create an atmosphere of refined luxury.",
+    "detailDescription": [
+      "Indulge in sophistication and comfort with our spacious Superior King Room, where elevated finishes and panoramic mountain views create an atmosphere of refined luxury.",
+      "Ideal for guests who want a little more serenity, this room combines a generous layout, a plush king bed, and modern conveniences for a polished stay."
+    ],
+    "bookingLink": "https://hotelyellowpagoda.com/booking/?room-type=5013589",
+    "amenities": ["wifi", "tv", "bath", "couch", "sink", "bed", "coffee", "beach"],
+    "familyFeatures": [
+      { "label": "Mountain View" },
+      { "label": "King Bed Comfort" },
+      { "label": "Room Service Access" }
+    ],
+    "inclusions": [
+      "Wide mountain-facing windows",
+      "Premium king bed and linens",
+      "Tea, coffee, and minibar setup",
+      "Smart TV with cable channels",
+      "Modern bathroom with hot water",
+      "Comfortable lounge corner"
+    ],
+    "images": [
+      "/images/rooms/imgi_6_superior-king.jpg",
+         "/images/d1.jpg",
+        "/images/d3.jpg",
+        "/images/d4.jpg",
+        "/images/d5.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "superior-twin-room",
+    "breadcrumb": "125 m² / Pool View / 1 Bedroom",
+    "title": "Superior Twin Room",
+    "area": "125 m²",
+    "guests": 3,
+    "beds": "2 Twin Beds",
+    "bathrooms": "1 Bathroom",
+    "description": "Enjoy unmatched comfort and style in our spacious Superior Twin Room. Ideal for friends or families, this beautifully appointed room offers generous space, modern amenities, and serene pool views.",
+    "detailDescription": [
+      "Enjoy unmatched comfort and style in our spacious Superior Twin Room, ideal for friends or families who want both flexibility and a polished hospitality experience.",
+      "The inviting twin-bed layout, peaceful pool outlook, and generous room design make it easy to settle in, recharge, and enjoy every part of your stay."
+    ],
+    "bookingLink": "https://hotelyellowpagoda.com/booking/?room-type=5013590",
+    "amenities": ["wifi", "tv", "bath", "couch", "sink", "bed", "coffee", "beach"],
+    "familyFeatures": [
+      { "label": "Pool View" },
+      { "label": "Twin Bed Comfort" },
+      { "label": "Family Friendly" }
+    ],
+    "inclusions": [
+      "Relaxing pool-facing setting",
+      "Two premium twin beds",
+      "Complimentary coffee and tea",
+      "Television and Wi-Fi access",
+      "Private bathroom with amenities",
+      "Spacious wardrobe and seating"
+    ],
+    "images": [
+      "/images/rooms/imgi_7_superior-twin.jpg",
+         "/images/d1.jpg",
+        "/images/d3.jpg",
+        "/images/d4.jpg",
+        "/images/d5.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "executive-suite",
+    "breadcrumb": "125 m² / Panoramic View / Suite",
+    "title": "Executive Suite",
+    "area": "125 m²",
+    "guests": 3,
+    "beds": "1 King Bed",
+    "bathrooms": "2 Bathrooms",
+    "description": "Elevate your stay with our luxurious Executive Suite, where comfort meets sophistication. A private living area, premium furnishings, and sweeping panoramic views define this pinnacle of Yellow Pagoda hospitality.",
+    "detailDescription": [
+      "Elevate your stay with our luxurious Executive Suite, where comfort meets sophistication through a private living space, generous layout, and sweeping panoramic views.",
+      "Designed for guests who appreciate extra room and quiet refinement, this suite delivers a premium experience with elegant furnishings and the signature warmth of Yellow Pagoda."
+    ],
+    "bookingLink": "https://hotelyellowpagoda.com/booking/?room-type=5013591",
+    "amenities": ["wifi", "tv", "bath", "couch", "sink", "bed", "coffee", "beach"],
+    "familyFeatures": [
+      { "label": "Private Living Area" },
+      { "label": "Panoramic View" },
+      { "label": "Premium Suite Stay" }
+    ],
+    "inclusions": [
+      "Separate lounge and sleeping areas",
+      "Panoramic windows and balcony access",
+      "Premium king bed arrangement",
+      "Refreshment station with coffee setup",
+      "Two modern bathrooms",
+      "Enhanced space for longer stays"
+    ],
+    "images": [
+      "/images/rooms/imgi_8_executive-suite.jpg",
+         "/images/d1.jpg",
+        "/images/d3.jpg",
+        "/images/d4.jpg",
+        "/images/d5.jpg"
+    ]
+  }
+]

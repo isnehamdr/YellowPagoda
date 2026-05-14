@@ -1,6 +1,7 @@
 import React from 'react'
 import About2 from '../Components/About2'
 import About3 from '../Components/About3'
+import Services from '../Components/Services'
 
 const AboutPage = () => {
   return (
@@ -31,6 +32,7 @@ const AboutPage = () => {
 
     <About2/>
     <About3/>
+    <Services/>
     </>
   )
 }

@@ -13,6 +13,10 @@ import Footer from "./Components/Footer";
 // LENIS
 import Lenis from "@studio-freight/lenis";
 import BackToTopButton from "./Components/BackToTopButton";
+import RoomPage from "./Pages/RoomPage";
+import RoomDetail from "./Pages/RoomDetail";
+import Contact from "./Pages/Contact";
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -45,6 +49,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage/>} />
+          <Route path="/rooms" element={<RoomPage/>} />
+          <Route path="/details/:slug" element={<RoomDetail/>} />
+          <Route path="/contact" element={<Contact/>} />
           {/* other routes */}
         </Routes>
 
