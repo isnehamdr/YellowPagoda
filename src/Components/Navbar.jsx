@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const PAGES_DROPDOWN = [
   { label: "Services",               path: "/services" },
-  { label: "Conference & Meeting",   path: "/conference" },
+  { label: "Conference & Meeting",   path: "/conference-and-meeting" },
   { label: "Activities",             path: "/activities" },
   { label: "Gallery",                path: "/gallery" },
 ];

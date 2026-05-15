@@ -1,15 +1,13 @@
-
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Services2 from '../Components/Services2';
-import Service3 from '../Components/Service3';
-import Testimonials from '../Components/Testimonials';
-
+import Accomodation from '../Components/Accomodation';
+import ConferenceAndMeeting from '../Components/ConferenceAndMeeting';
+import Hall from '../Components/Hall';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ServicePage = () => {
+const Conference = () => {
   const sectionRef = useRef(null);
   const subtitleRef = useRef(null);
   const mainHeadingRef = useRef(null);
@@ -92,11 +90,11 @@ const ServicePage = () => {
   }, []);
 
   return (
-    <div className="w-full overflow-x-hidden">
+    <>
       <div
         ref={sectionRef}
         className="relative min-h-screen w-full bg-cover bg-center bg-no-repeat overflow-hidden"
-        style={{ backgroundImage: "url('/images/s1.jpeg')" }}
+        style={{ backgroundImage: "url('/images/hall1.png')" }}
       >
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/60" />
@@ -108,38 +106,35 @@ const ServicePage = () => {
             {/* Subtitle */}
             <p
               ref={subtitleRef}
-              className="uppercase text-xs sm:text-sm md:text-base text-white text-center font-semibold tracking-[0.12em] sm:tracking-[0.2em] md:tracking-widest mb-4 md:mb-6"
+              className="uppercase text-xs sm:text-sm md:text-base text-white text-center font-semibold tracking-[0.2em] md:tracking-widest mb-4 md:mb-6"
             >
-High standards of hospitality            </p>
+              Our Conference Facilities
+            </p>
 
             {/* Main Heading — bumped up on small screens */}
             <h2
               ref={mainHeadingRef}
-              className="text-5xl sm:text-5xl md:text-7xl font-medium text-white text-center tracking-normal sm:tracking-wide md:tracking-[8px] leading-tight md:leading-[1.2] lg:leading-relaxed max-w-5xl mx-auto px-2"
+              className="text-5xl sm:text-5xl md:text-7xl font-medium text-white text-center tracking-wide md:tracking-[8px] leading-tight md:leading-[1.2] lg:leading-relaxed max-w-5xl mx-auto px-2"
             >
-Premium Services            </h2>
+              Conference & Meeting Spaces
+            </h2>
 
             {/* Sub Heading — better line-height on small screens */}
             <h3
               ref={subHeadingRef}
-              className="text-base sm:text-lg md:text-lg lg:text-xl font-medium text-white text-center tracking-normal sm:tracking-wide md:tracking-[2px] leading-relaxed md:leading-[1.2] lg:leading-relaxed max-w-4xl mx-auto px-2 mt-6 sm:mt-8 md:mt-12"
+              className="text-base sm:text-lg md:text-lg lg:text-xl font-medium text-white text-center tracking-wide md:tracking-[2px] leading-relaxed md:leading-[1.2] lg:leading-relaxed max-w-4xl mx-auto px-2 mt-6 sm:mt-8 md:mt-12"
             >
-        We strive to provide our guests with luxury, comfort & tailor-made service.
+              Spend your comfortable holiday in the heart of the beautiful Pokhara Valley.
             </h3>
 
           </div>
         </div>
       </div>
 
-
-      <Services2/>
-      <Service3/>
-      <Testimonials/>
-
-
-  
-    </div>
+      <ConferenceAndMeeting/>
+      <Hall/>
+    </>
   );
 };
 
-export default ServicePage;
+export default Conference;

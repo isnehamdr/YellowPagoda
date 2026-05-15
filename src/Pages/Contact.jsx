@@ -155,14 +155,14 @@ const Contact = () => {
 
             <h2
               ref={mainHeadingRef}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-light text-white tracking-[0.05em] leading-none mb-8 md:mb-10"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium text-white tracking-[0.05em] leading-none mb-8 md:mb-10"
             >
               Contact Us
             </h2>
 
             <h3
               ref={subHeadingRef}
-              className="text-sm sm:text-base md:text-lg font-light text-white tracking-widest leading-relaxed max-w-xl mx-auto"
+              className="text-sm sm:text-base md:text-lg font-semibold text-white tracking-widest leading-relaxed max-w-xl mx-auto"
             >
               For bookings and enquiries, please call us or write to us.
             </h3>

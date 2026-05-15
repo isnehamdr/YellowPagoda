@@ -1,55 +1,13 @@
-// import React from 'react'
-// import About2 from '../Components/About2'
-// import About3 from '../Components/About3'
-// import Services from '../Components/Services'
-
-// const AboutPage = () => {
-//   return (
-//     <>
-//     <div 
-//       className='min-h-screen bg-cover bg-center bg-no-repeat'
-//       style={{
-//         backgroundImage: "url('/images/aboutbg.jpg')"
-     
-//       }}
-//     >
-//       {/* Overlay */}
-//       <div className='min-h-screen bg-black/60 pt-24 md:pt-52'>
-//         {/* Content */}
-//         <div className="container mx-auto px-4 text-white text-center">
-//           <p className='mb-6 md:mb-12 text-sm md:text-md font-semibold'>
-//             An Iconic Hotel in the Heart of Pokhara
-//           </p>
-//           <h1 className="text-4xl md:text-7xl font-bold mb-8 md:mb-12">
-//             About The Hotel
-//           </h1>
-//           <p className='text-sm md:text-md font-semibold px-4 md:px-0'>
-//             A luxury boutique hotel in the heart of wine country
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-
-//     <About2/>
-//     <About3/>
-//     <Services/>
-//     </>
-//   )
-// }
-
-// export default AboutPage
-
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Activities2 from "../Components/Activities2";
 
-import About2 from "../Components/About2";
-import About3 from "../Components/About3";
-import Services from "../Components/Services";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AboutPage = () => {
+const ActivitiesPage = () => {
   const heroRef = useRef(null);
   const textRef = useRef(null);
 
@@ -134,7 +92,7 @@ const AboutPage = () => {
         ref={heroRef}
         className="min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden"
         style={{
-          backgroundImage: "url('/images/aboutbg.jpg')",
+          backgroundImage: "url('/images/boating.jpg')",
         }}
       >
         {/* OVERLAY */}
@@ -146,36 +104,25 @@ const AboutPage = () => {
             className="container mx-auto text-white text-center flex flex-col items-center justify-center"
           >
             <p className="mb-4 md:mb-8 text-base sm:text-lg md:text-lg font-semibold tracking-wide leading-relaxed">
-              An Iconic Hotel in the Heart of Pokhara
+             Things To Do in The Valley
             </p>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-medium mb-6 md:mb-10 leading-tight">
-              About The Hotel
+      Local Activities
             </h1>
 
             <p className="text-base sm:text-lg md:text-lg font-medium max-w-2xl mx-auto leading-7 sm:leading-8 px-2 sm:px-0">
-              A luxury boutique hotel in the heart of wine country
+             Make the most of your time in Pokhara Valley with our collection of curated packages and experiences.
             </p>
           </div>
         </div>
       </div>
 
-      {/* ABOUT 2 */}
-      <div className="gsap-section overflow-hidden">
-        <About2 />
-      </div>
+      <Activities2/>
 
-      {/* ABOUT 3 */}
-      <div className="gsap-section overflow-hidden">
-        <About3 />
-      </div>
 
-      {/* SERVICES */}
-      <div className="gsap-section overflow-hidden">
-        <Services />
-      </div>
     </>
   );
 };
 
-export default AboutPage;
+export default ActivitiesPage;
