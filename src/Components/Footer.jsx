@@ -13,7 +13,7 @@ const Footer = () => {
                         <div className="bg-black py- px-6 md:px-12 lg:px-24">
                             <div className="flex justify-center  ">
                                 {/* Booking.com logo */}
-                                <a href="/" target='_blank' aria-label="Booking.com" className="text-gray-400 hover:text-white transition-colors duration-300">
+                                <a href="https://www.booking.com/hotel/np/yellow-pagoda.html?chal_t=1779017867113&force_referer=https%3A%2F%2Fwww.google.com%2F" target='_blank' aria-label="Booking.com" className="text-gray-400 hover:text-white transition-colors duration-300">
                                     <img
                                         src="/images/icons/booking.png"
                                         alt="Booking.com"
@@ -22,7 +22,7 @@ const Footer = () => {
                                 </a>
 
                                 {/* Agoda logo */}
-                                <a href="/" target='_blank' aria-label="Agoda" className="text-gray-400 hover:text-white transition-colors duration-300">
+                                <a href="https://www.agoda.com/yellow-pagoda-hotel/hotel/kathmandu-np.html?cid=1844104&ds=cvgQhHUd6nh%2FGHtP" target='_blank' aria-label="Agoda" className="text-gray-400 hover:text-white transition-colors duration-300">
                                     <img
                                         src="/images/icons/agoda.png"
                                         alt="Agoda"
@@ -31,28 +31,28 @@ const Footer = () => {
                                 </a>
 
                                 {/* Tripadvisor logo */}
-                                <a href="/" target='_blank' aria-label="Tripadvisor" className="text-gray-400 hover:text-white transition-colors duration-300">
+                                <a href="https://www.tripadvisor.com/Hotel_Review-g293891-d20809404-Reviews-Yellow_Pagoda_Hotel-Pokhara_Gandaki_Zone_Western_Region.html" target='_blank' aria-label="Tripadvisor" className="text-gray-400 hover:text-white transition-colors duration-300">
                                     <img
                                         src="/images/icons/tripadvisor.png"
                                         alt="Tripadvisor"
                                         className="w-18 object-cover "
                                     />
                                 </a>
-                                <a href="/" target='_blank' aria-label="Tripadvisor" className="text-gray-400 hover:text-white transition-colors duration-300">
+                                <a href="https://www.makemytrip.global/hotels-international/en-np/nepal/pokhara-hotels/hotel_yellow_pagoda_pokhara-details.html" target='_blank' aria-label="Tripadvisor" className="text-gray-400 hover:text-white transition-colors duration-300">
                                     <img
                                         src="/images/icons/Makemytrip.png"
                                         alt="make my trip"
                                         className="w-18 object-cover "
                                     />
                                 </a>
-                                <a href="/" target='_blank' aria-label="Tripadvisor" className="text-gray-400 hover:text-white transition-colors duration-300">
+                                <a href="https://www.expedia.com/Pokhara-Hotels-Hotel-Yellow-Pagoda.h45422841.Hotel-Information" target='_blank' aria-label="Tripadvisor" className="text-gray-400 hover:text-white transition-colors duration-300">
                                     <img
                                         src="/images/icons/expedia.png"
                                         alt="expedia"
                                         className="w-18 object-cover "
                                     />
                                 </a>
-                                <a href="/" target='_blank' aria-label="Tripadvisor" className="text-gray-400 hover:text-white transition-colors duration-300">
+                                <a href="https://www.trip.com/hotels/pokhara-hotel-detail-54489769/hotel-yellow-pagoda/" target='_blank' aria-label="Tripadvisor" className="text-gray-400 hover:text-white transition-colors duration-300">
                                     <img
                                         src="/images/icons/trip.com.png"
                                         alt="trip.com"
@@ -85,16 +85,14 @@ const Footer = () => {
                                         Experience luxury and comfort in the heart of Pokhara. Our hotel offers premium amenities and exceptional service for an unforgettable stay.
                                     </p>
                                     <div className="flex space-x-4">
-                                        <a href="#" className="text-white hover:text-yellow-500 transition">
+                                        <a href="https://www.facebook.com/hotelyellowpagodapokhara" target='_blank' className="text-white hover:text-yellow-500 transition">
                                             <FaFacebook size={20} />
                                         </a>
-                                        <a href="#" className="text-white hover:text-yellow-500 transition">
-                                            <FaTwitter size={20} />
-                                        </a>
-                                        <a href="#" className="text-white hover:text-yellow-500 transition">
+                                       
+                                        <a href="https://www.instagram.com/hotelyellowpagodapokhara/"  target='_blank' className="text-white hover:text-yellow-500 transition">
                                             <FaInstagram size={20} />
                                         </a>
-                                        <a href="#" className="text-white hover:text-yellow-500 transition">
+                                        <a href="https://www.youtube.com/watch?v=k-66RjNUNRo" target='_blank' className="text-white hover:text-yellow-500 transition">
                                             <FaYoutube size={20} />
                                         </a>
                                     </div>
@@ -108,14 +106,18 @@ const Footer = () => {
                                             <FaMapMarkerAlt className="mt-1 mr-2 flex-shrink-0" />
                                             <span>Damside RD, Pokhara, Nepal</span>
                                         </li>
-                                        <li className="flex items-start">
-                                            <FaPhone className="mt-1 mr-2 flex-shrink-0" />
-                                            <span>+977 061-457991, 061-457992</span>
-                                        </li>
-                                        <li className="flex items-start">
-                                            <FaEnvelope className="mt-1 mr-2 flex-shrink-0" />
-                                            <span>info@yellowpagoda.com</span>
-                                        </li>
+                                       <li className="flex items-start">
+    <FaPhone className="mt-1 mr-2 flex-shrink-0" />
+    <a href="tel:+977061457991" className="hover:underline">
+        +977 061-457991, 061-457992
+    </a>
+</li>
+<li className="flex items-start">
+    <FaEnvelope className="mt-1 mr-2 flex-shrink-0" />
+    <a href="mailto:info@yellowpagoda.com" className="hover:underline">
+        info@yellowpagoda.com
+    </a>
+</li>
                                     </ul>
                                     <Link
                                         to="/contact"

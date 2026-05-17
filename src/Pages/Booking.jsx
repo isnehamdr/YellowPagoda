@@ -9,7 +9,7 @@ const Banner = () => {
                 <img 
                     className="w-full h-full object-cover" 
                     src="images/hero.jpg" 
-                    alt="Yellow Pagoda - Luxury Resort & Event Venue" 
+                    alt="Hotel Yellow Pagoda booking banner" 
                 />
                 <div className="absolute inset-0 bg-black/40"></div>
                 
@@ -86,15 +86,15 @@ const BookingEngineScript = () => {
 // Main Booking Page
 const Booking = () => {
     useEffect(() => {
-        document.title = "Booking | Yellow Pagoda - Luxury Resort & Event Venue - Luxury Resort in Nepal";
+        document.title = "Book Now | Hotel Yellow Pagoda";
     }, []);
 
     return (
         <>
             <Helmet>
-<title>Book Now | Yellow Pagoda - Offical Website</title>
-                <meta name="description" content="Book your luxury stay at Yellow Pagoda - Luxury Resort & Event Venue. Premium accommodations, fine dining, and breathtaking mountain views in Pokhara, Nepal." />
-                <meta name="keywords" content="hotel booking Pokhara, luxury resort booking, Baranda accommodation booking, Pokhara hotel reservation, luxury stay booking Nepal, premium rooms Pokhara" />
+<title>Book Now | Hotel Yellow Pagoda</title>
+                <meta name="description" content="Book your stay at Hotel Yellow Pagoda in Pokhara, Nepal. Explore premium rooms, direct reservations, and comfortable hospitality." />
+                <meta name="keywords" content="Hotel Yellow Pagoda, Yellow Pagoda Pokhara, hotel booking Pokhara, Pokhara hotel reservation, luxury hotel Pokhara, premium rooms Pokhara, Nepal hotel booking" />
                 
                 {/* SINGLE Canonical */}
                 <link rel="canonical" href="https://hotelyellowpagoda.com/booking" />
@@ -102,14 +102,14 @@ const Booking = () => {
                 {/* Open Graph / Facebook */}
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://hotelyellowpagoda.com/booking" />
-                <meta property="og:title" content="Booking | Yellow Pagoda - Luxury Resort & Event Venue - Luxury Resort & Event Venue" />
-                <meta property="og:description" content="Reserve your luxury stay at Yellow Pagoda - Luxury Resort & Event Venue. Enjoy premium accommodations, fine dining, and breathtaking mountain views in Nepal." />
+                <meta property="og:title" content="Book Now | Hotel Yellow Pagoda" />
+                <meta property="og:description" content="Reserve your stay at Hotel Yellow Pagoda in Pokhara, Nepal. Enjoy premium accommodation and direct booking convenience." />
                 <meta property="og:image" content="https://hotelyellowpagoda.com/images/logo.png" />
 
                 {/* Twitter */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Booking | Yellow Pagoda - Luxury Resort & Event Venue - Luxury Resort & Event Venue" />
-                <meta name="twitter:description" content="Reserve your luxury stay at Yellow Pagoda - Luxury Resort & Event Venue. Enjoy premium accommodations, fine dining, and breathtaking mountain views in Nepal." />
+                <meta name="twitter:title" content="Book Now | Hotel Yellow Pagoda" />
+                <meta name="twitter:description" content="Reserve your stay at Hotel Yellow Pagoda in Pokhara, Nepal. Enjoy premium accommodation and direct booking convenience." />
                 <meta name="twitter:image" content="https://hotelyellowpagoda.com/images/logo.png" />
 
                 {/* JSON-LD Structured Data */}
@@ -117,14 +117,14 @@ const Booking = () => {
                     {JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "WebPage",
-                        "name": "Booking | Yellow Pagoda - Luxury Resort & Event Venue",
-                        "description": "Book your stay at Yellow Pagoda - Luxury Resort & Event Venue luxury resort and event venue in Nepal",
+                        "name": "Book Now | Hotel Yellow Pagoda",
+                        "description": "Book your stay at Hotel Yellow Pagoda in Pokhara, Nepal",
                         "url": "https://hotelyellowpagoda.com/booking",
                         "image": "https://hotelyellowpagoda.com/images/logo.png",
                         "mainEntity": {
                             "@type": "Hotel",
-                            "name": "Yellow Pagoda - Luxury Resort & Event Venue",
-                            "description": "Luxury resort offering premium accommodations, fine dining restaurant, and event hosting facilities with stunning mountain views",
+                            "name": "Hotel Yellow Pagoda",
+                            "description": "Hotel offering premium accommodations and hospitality in Pokhara, Nepal",
                            "address": {
   "@type": "PostalAddress",
   "streetAddress": "7 Besisahar - Chame Sadak, Besisahar 3",
@@ -150,7 +150,7 @@ const Booking = () => {
                         "potentialAction": {
                             "@type": "ReserveAction",
                             "target": "https://hotelyellowpagoda.com/booking",
-                            "description": "Book your stay at Yellow Pagoda - Luxury Resort & Event Venue"
+                            "description": "Book your stay at Hotel Yellow Pagoda"
                         }
                     })}
                 </script>

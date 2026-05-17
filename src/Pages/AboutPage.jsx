@@ -77,7 +77,7 @@ const AboutPage = () => {
         />
         <meta
           name="keywords"
-          content="about Hotel Yellow Pagoda, luxury boutique hotel Pokhara, Nepal hotel history, Pokhara hospitality, hotel story Nepal"
+          content="Hotel Yellow Pagoda, Yellow Pagoda Pokhara, about Hotel Yellow Pagoda, luxury hotel Pokhara, boutique hotel Nepal, Pokhara accommodation"
         />
         <meta name="robots" content="index, follow" />
 

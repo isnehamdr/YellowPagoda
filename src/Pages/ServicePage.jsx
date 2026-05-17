@@ -252,7 +252,7 @@ const ServicePage = () => {
         <meta name="description" content={pageDescription} />
         <meta
           name="keywords"
-          content="hotel services Nepal, luxury hotel services, concierge service Nepal, spa hotel Nepal, premium hospitality Nepal, Hotel Yellow Pagoda services"
+          content="Hotel Yellow Pagoda, Yellow Pagoda Pokhara, hotel services Nepal, luxury hotel services, concierge service Nepal, premium hospitality Nepal, Hotel Yellow Pagoda services"
         />
         <meta name="robots" content="index, follow" />
 

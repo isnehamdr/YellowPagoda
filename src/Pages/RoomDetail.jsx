@@ -347,11 +347,11 @@ const RoomDetail = () => {
 
   // SEO DATA
   const pageTitle = room
-    ? `${room.title} | Hotel Yellow Pagoda Kathmandu`
+    ? `${room.title} | Hotel Yellow Pagoda Pokhara`
     : "Room Not Found | Hotel Yellow Pagoda";
 
   const pageDescription = room
-    ? `${room.description?.slice(0, 140)} Experience luxury accommodation at Hotel Yellow Pagoda Kathmandu.`
+    ? `${room.description?.slice(0, 140)} Experience luxury accommodation at Hotel Yellow Pagoda Pokhara.`
     : "The requested room could not be found.";
 
   const canonicalUrl = `${SITE_URL}/details/${slug}`;
@@ -465,7 +465,7 @@ const RoomDetail = () => {
         <meta name="description" content={pageDescription} />
         <meta
           name="keywords"
-          content={`${room.title}, luxury hotel room Kathmandu, boutique hotel Nepal, Hotel Yellow Pagoda`}
+          content={`${room.title}, Hotel Yellow Pagoda, Yellow Pagoda Pokhara, luxury hotel room Pokhara, boutique hotel Nepal, Pokhara accommodation`}
         />
 
         <link rel="canonical" href={canonicalUrl} />
@@ -521,7 +521,7 @@ const RoomDetail = () => {
         >
           <img
             src={room.images?.[heroImageIndex] || room.images?.[0]}
-            alt={`${room.title} at Hotel Yellow Pagoda Kathmandu`}
+            alt={`${room.title} at Hotel Yellow Pagoda Pokhara`}
             className="w-full h-full object-cover object-center"
           />
 
@@ -639,7 +639,7 @@ const RoomDetail = () => {
             {/* RIGHT SIDEBAR */}
             <aside
               ref={sidebarRef}
-              className="w-full lg:w-[320px] xl:w-[360px] flex-shrink-0"
+              className="w-full lg:w-[320px] xl:w-[360px] flex-shrink-0 mb-8 lg:mt-0"
             >
               <div className="lg:sticky lg:top-6 bg-white border border-gray-200 rounded-2xl md:rounded-3xl shadow-sm overflow-hidden">
                 <div className="px-5 sm:px-6 py-5 sm:py-6 border-b">

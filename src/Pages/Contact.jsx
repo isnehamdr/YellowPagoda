@@ -162,7 +162,7 @@ const Contact = () => {
         />
         <meta
           name="keywords"
-          content="contact Hotel Yellow Pagoda, hotel phone Pokhara, hotel email Nepal, Pokhara hotel reservation enquiry, Yellow Pagoda address"
+          content="Hotel Yellow Pagoda, Yellow Pagoda Pokhara, contact Hotel Yellow Pagoda, hotel phone Pokhara, hotel email Nepal, Pokhara hotel enquiry, Yellow Pagoda address"
         />
         <meta name="robots" content="index, follow" />
 
@@ -288,9 +288,9 @@ const Contact = () => {
         {/* INFO CARDS */}
         <section ref={infoRef} className="px-5 sm:px-8 md:px-12">
           <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 text-black">
-            <InfoCard icon="/images/call.png"     title="Call Us"  detail="+977 061-457991" />
+            <InfoCard href="tel:+977061457991"  icon="/images/call.png"     title="Call Us"  detail="+977 061-457991" />
             <InfoCard icon="/images/location.png" title="Address"  detail="Damside RD, Pokhara, Nepal" />
-            <InfoCard icon="/images/mail.png"     title="Email Us" detail="info@yellowpagoda.com" />
+            <InfoCard href="mailto:info@yellowpagoda.com" icon="/images/mail.png"     title="Email Us" detail="info@yellowpagoda.com" />
           </div>
         </section>
       </section>

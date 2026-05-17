@@ -74,7 +74,7 @@ const Conference = () => {
         />
         <meta
           name="keywords"
-          content="conference hall Pokhara, meeting rooms Nepal, event venue Pokhara, corporate events Nepal, Hotel Yellow Pagoda conference, banquet hall Pokhara"
+          content="Hotel Yellow Pagoda, Yellow Pagoda Pokhara, conference hall Pokhara, meeting rooms Nepal, event venue Pokhara, corporate events Nepal, banquet hall Pokhara"
         />
         <meta name="robots" content="index, follow" />
 

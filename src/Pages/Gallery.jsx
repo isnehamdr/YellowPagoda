@@ -156,7 +156,7 @@ const Gallery = () => {
         />
         <meta
           name="keywords"
-          content="Hotel Yellow Pagoda gallery, Pokhara hotel photos, luxury hotel images Nepal, hotel room photos, hotel dining gallery, Yellow Pagoda pictures"
+          content="Hotel Yellow Pagoda, Yellow Pagoda Pokhara, Hotel Yellow Pagoda gallery, Pokhara hotel photos, luxury hotel images Nepal, hotel room photos, hotel dining gallery"
         />
         <meta name="robots" content="index, follow" />
 

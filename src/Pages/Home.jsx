@@ -53,14 +53,14 @@ const Home = () => {
           ================================================================ */}
       <Helmet>
         {/* ----- Primary ----- */}
-        <title>Hotel Yellow Pagoda | Luxury Hotel in Kathmandu, Nepal</title>
+        <title>Hotel Yellow Pagoda | Luxury Hotel in Pokhara, Nepal</title>
         <meta
           name="description"
           content="Hotel Yellow Pagoda – award-winning luxury hotel in Kathmandu. Enjoy premium rooms, fine dining, spa, and conference facilities. Book direct for the best rate."
         />
         <meta
           name="keywords"
-          content="Hotel Yellow Pagoda, luxury hotel Kathmandu, Nepal boutique hotel, Kathmandu accommodation, hotel near Thamel"
+          content="Hotel Yellow Pagoda, Yellow Pagoda Pokhara, luxury hotel Pokhara, boutique hotel Nepal, Pokhara accommodation, hotel in Pokhara"
         />
         <meta name="robots" content="index, follow" />
 
@@ -72,7 +72,7 @@ const Home = () => {
         <meta property="og:site_name" content="Hotel Yellow Pagoda" />
         <meta
           property="og:title"
-          content="Hotel Yellow Pagoda | Luxury Hotel in Kathmandu, Nepal"
+          content="Hotel Yellow Pagoda | Luxury Hotel in Pokhara, Nepal"
         />
         <meta
           property="og:description"
@@ -87,7 +87,7 @@ const Home = () => {
         <meta property="og:image:height" content="630" />
         <meta
           property="og:image:alt"
-          content="Hotel Yellow Pagoda lobby – Luxury Hotel in Kathmandu, Nepal"
+          content="Hotel Yellow Pagoda lobby – Luxury Hotel in Pokhara, Nepal"
         />
 
         {/* ----- Twitter Card ----- */}
@@ -95,7 +95,7 @@ const Home = () => {
         <meta name="twitter:site" content="@HotelYellowPagoda" />
         <meta
           name="twitter:title"
-          content="Hotel Yellow Pagoda | Luxury Hotel in Kathmandu, Nepal"
+          content="Hotel Yellow Pagoda | Luxury Hotel in Pokhara, Nepal"
         />
         <meta
           name="twitter:description"

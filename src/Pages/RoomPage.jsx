@@ -246,7 +246,7 @@ const RoomPage = () => {
         <meta name="description" content={pageDescription} />
         <meta
           name="keywords"
-          content="luxury hotel rooms, boutique hotel Nepal, premium suites, Hotel Yellow Pagoda rooms, hotel accommodation Nepal"
+          content="Hotel Yellow Pagoda, Yellow Pagoda Pokhara, luxury hotel rooms Pokhara, boutique hotel Nepal, premium suites, Hotel Yellow Pagoda rooms, hotel accommodation Nepal"
         />
         <meta name="robots" content="index, follow" />
 

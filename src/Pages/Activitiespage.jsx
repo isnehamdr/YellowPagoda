@@ -74,7 +74,7 @@ const ActivitiesPage = () => {
         />
         <meta
           name="keywords"
-          content="activities Pokhara, things to do Pokhara, boating Pokhara, trekking Nepal, cultural tours Pokhara, Hotel Yellow Pagoda experiences, Pokhara Valley tours"
+          content="Hotel Yellow Pagoda, Yellow Pagoda Pokhara, activities Pokhara, things to do Pokhara, Pokhara Valley tours, boating Pokhara, trekking Nepal"
         />
         <meta name="robots" content="index, follow" />
 
