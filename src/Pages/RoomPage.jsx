@@ -3,198 +3,146 @@
 // import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import Accomodation from '../Components/Accomodation';
 
-// // Register the ScrollTrigger plugin
 // gsap.registerPlugin(ScrollTrigger);
 
 // const RoomPage = () => {
-//   // Refs for animation targets
 //   const sectionRef = useRef(null);
 //   const subtitleRef = useRef(null);
 //   const mainHeadingRef = useRef(null);
 //   const subHeadingRef = useRef(null);
 
 //   useEffect(() => {
-//     // Small delay to ensure DOM is fully rendered
-//     const timer = setTimeout(() => {
-//       // Ensure all elements are present before animating
-//       if (
-//         !subtitleRef.current ||
-//         !mainHeadingRef.current ||
-//         !subHeadingRef.current ||
-//         !sectionRef.current
-//       ) {
-//         return;
-//       }
-
-//       // Store references to avoid stale closures in cleanup
+//     const ctx = gsap.context(() => {
 //       const subtitle = subtitleRef.current;
 //       const mainHeading = mainHeadingRef.current;
 //       const subHeading = subHeadingRef.current;
 
-//       // Helper to split heading text into spans for word-by-word animation
-//       const originalMainHeadingText = mainHeading.innerText;
-//       const mainWords = originalMainHeadingText.split(' ');
+//       if (!subtitle || !mainHeading || !subHeading) return;
+
+//       // — Word-split: main heading —
+//       const mainWords = mainHeading.innerText.split(' ');
 //       mainHeading.innerHTML = mainWords
-//         .map((word) => `<span class="inline-block opacity-0 translate-y-4">${word}</span>`)
+//         .map((w) => `<span class="inline-block">${w}</span>`)
 //         .join(' ');
-//       const mainWordSpans = mainHeading.querySelectorAll('span');
+//       const mainSpans = mainHeading.querySelectorAll('span');
 
-//       // Split subheading text
-//       const originalSubHeadingText = subHeading.innerText;
-//       const subWords = originalSubHeadingText.split(' ');
+//       // — Word-split: sub heading —
+//       const subWords = subHeading.innerText.split(' ');
 //       subHeading.innerHTML = subWords
-//         .map((word) => `<span class="inline-block opacity-0 translate-y-4">${word}</span>`)
+//         .map((w) => `<span class="inline-block">${w}</span>`)
 //         .join(' ');
-//       const subWordSpans = subHeading.querySelectorAll('span');
+//       const subSpans = subHeading.querySelectorAll('span');
 
-//       // Kill any existing ScrollTriggers for these elements
-//       ScrollTrigger.getAll().forEach((trigger) => {
-//         if (
-//           trigger.vars.trigger === subtitle ||
-//           trigger.vars.trigger === mainHeading ||
-//           trigger.vars.trigger === subHeading
-//         ) {
-//           trigger.kill();
-//         }
+//       // shared ScrollTrigger defaults
+//       const st = (trigger, start = 'top 82%') => ({
+//         trigger,
+//         start,
+//         toggleActions: 'play none none reverse',
 //       });
 
-//       // Animation 1: Subtitle - fade in and slide up
+//       // Subtitle
 //       gsap.fromTo(
 //         subtitle,
-//         {
-//           opacity: 0,
-//           y: 30,
-//         },
+//         { opacity: 0, y: 24 },
 //         {
 //           opacity: 1,
 //           y: 0,
-//           duration: 0.8,
+//           duration: 0.75,
 //           ease: 'power2.out',
-//           scrollTrigger: {
-//             trigger: subtitle,
-//             start: 'top 85%',
-//             end: 'bottom 60%',
-//             toggleActions: 'play none none reverse',
-//             scroller: window,
-//           },
+//           scrollTrigger: st(subtitle),
 //         }
 //       );
 
-//       // Animation 2: Main Heading - staggered word animation
-//       if (mainWordSpans.length) {
-//         gsap.fromTo(
-//           mainWordSpans,
-//           {
-//             opacity: 0,
-//             y: 30,
-//           },
-//           {
-//             opacity: 1,
-//             y: 0,
-//             duration: 0.6,
-//             stagger: 0.08,
-//             ease: 'power3.out',
-//             scrollTrigger: {
-//               trigger: mainHeading,
-//               start: 'top 80%',
-//               end: 'bottom 50%',
-//               toggleActions: 'play none none reverse',
-//               scroller: window,
-//             },
-//           }
-//         );
-//       }
+//       // Main heading — staggered words with slight clip feel
+//       gsap.fromTo(
+//         mainSpans,
+//         { opacity: 0, y: 36, skewX: 4 },
+//         {
+//           opacity: 1,
+//           y: 0,
+//           skewX: 0,
+//           duration: 0.7,
+//           stagger: 0.09,
+//           ease: 'power3.out',
+//           scrollTrigger: st(mainHeading),
+//         }
+//       );
 
-//       // Animation 3: Sub Heading - staggered word animation with slight delay
-//       if (subWordSpans.length) {
-//         gsap.fromTo(
-//           subWordSpans,
-//           {
-//             opacity: 0,
-//             y: 30,
-//           },
-//           {
-//             opacity: 1,
-//             y: 0,
-//             duration: 0.6,
-//             stagger: 0.05,
-//             delay: 0.3,
-//             ease: 'power3.out',
-//             scrollTrigger: {
-//               trigger: subHeading,
-//               start: 'top 80%',
-//               end: 'bottom 50%',
-//               toggleActions: 'play none none reverse',
-//               scroller: window,
-//             },
-//           }
-//         );
-//       }
-//     }, 100);
+//       // Sub heading — softer stagger, delayed after main
+//       gsap.fromTo(
+//         subSpans,
+//         { opacity: 0, y: 20 },
+//         {
+//           opacity: 1,
+//           y: 0,
+//           duration: 0.55,
+//           stagger: 0.04,
+//           delay: 0.35,
+//           ease: 'power2.out',
+//           scrollTrigger: st(subHeading, 'top 85%'),
+//         }
+//       );
+//     }, sectionRef);
 
-//     // Cleanup function to kill all ScrollTriggers
-//     return () => {
-//       clearTimeout(timer);
-//       ScrollTrigger.getAll().forEach((trigger) => {
-//         trigger.kill();
-//       });
-//     };
+//     return () => ctx.revert();
 //   }, []);
 
 //   return (
-//     <> 
-//     <div
-//       ref={sectionRef}
-//       className="relative min-h-screen w-full bg-cover bg-center bg-no-repeat overflow-hidden"
-//       style={{
-//         backgroundImage: "url('/images/rooms/imgi_6_superior-king.jpg')",
-//       }}
-//     >
-//       {/* Overlay */}
-//       <div className="absolute inset-0 bg-black/60" />
+//     <>
+//       <div
+//         ref={sectionRef}
+//         className="relative min-h-screen w-full bg-cover bg-center bg-no-repeat overflow-hidden"
+//         style={{ backgroundImage: "url('/images/rooms/imgi_6_superior-king.jpg')" }}
+//       >
+//         {/* Overlay */}
+//         <div className="absolute inset-0 bg-black/60" />
 
-//       {/* Content Container */}
-//       <div className="relative z-10 min-h-screen w-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-16 md:py-24 lg:py-32">
-//         {/* Inner Wrapper for max-width and centering */}
-//         <div className="w-full max-w-6xl mx-auto">
-//           {/* Subtitle */}
-//           <p
-//             ref={subtitleRef}
-//             className="uppercase text-xs sm:text-sm md:text-base text-white text-center font-semibold tracking-[0.2em] md:tracking-widest mb-4 md:mb-6"
-//           >
-//             Our Accommodations
-//           </p>
+//         {/* Content */}
+//         <div className="relative z-10 min-h-screen w-full flex flex-col items-center justify-center px-6 sm:px-6 md:px-8 py-20 md:py-24 lg:py-32">
+//           <div className="w-full max-w-6xl mx-auto">
 
-//           {/* Main Heading */}
-//           <h2
-//             ref={mainHeadingRef}
-//             className="text-4xl sm:text-5xl md:text-7xl font-semibold text-white text-center tracking-wide md:tracking-[8px] leading-tight md:leading-[1.2] lg:leading-relaxed max-w-5xl mx-auto px-2"
-//           >
-//             Stay With Us
-//           </h2>
+//             {/* Subtitle */}
+//             <p
+//               ref={subtitleRef}
+//               className="uppercase text-xs sm:text-sm md:text-base text-white text-center font-semibold tracking-[0.2em] md:tracking-widest mb-4 md:mb-6"
+//             >
+//               Our Accommodations
+//             </p>
 
-//           {/* Sub Heading */}
-//           <h3
-//             ref={subHeadingRef}
-//             className="text-base md:text-lg lg:text-xl font-medium text-white text-center tracking-wide md:tracking-[2px] leading-tight md:leading-[1.2] lg:leading-relaxed max-w-4xl mx-auto px-2 mt-8 md:mt-12"
-//           >
-//             Spend your comfortable holiday in the heart of the beautiful Napa Valley.
-//           </h3>
+//             {/* Main Heading — bumped up on small screens */}
+//             <h2
+//               ref={mainHeadingRef}
+//               className="text-5xl sm:text-5xl md:text-7xl font-medium text-white text-center tracking-wide md:tracking-[8px] leading-tight md:leading-[1.2] lg:leading-relaxed max-w-5xl mx-auto px-2"
+//             >
+//               Stay With Us
+//             </h2>
+
+//             {/* Sub Heading — better line-height on small screens */}
+//             <h3
+//               ref={subHeadingRef}
+//               className="text-base sm:text-lg md:text-lg lg:text-xl font-medium text-white text-center tracking-wide md:tracking-[2px] leading-relaxed md:leading-[1.2] lg:leading-relaxed max-w-4xl mx-auto px-2 mt-6 sm:mt-8 md:mt-12"
+//             >
+//               Spend your comfortable holiday in the heart of the beautiful Pokhara Valley.
+//             </h3>
+
+//           </div>
 //         </div>
 //       </div>
-//     </div>
-//     <Accomodation/>
-//      </>
+
+//       <Accomodation />
+//     </>
 //   );
 // };
 
 // export default RoomPage;
 
 
-import React, { useRef, useEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Accomodation from '../Components/Accomodation';
+import React, { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Helmet } from "react-helmet-async";
+
+import Accomodation from "../Components/Accomodation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -204,6 +152,17 @@ const RoomPage = () => {
   const mainHeadingRef = useRef(null);
   const subHeadingRef = useRef(null);
 
+  // SEO CONFIG
+  const SITE_URL = "https://www.hotelyellowpagoda.com";
+  const PAGE_URL = `${SITE_URL}/rooms`;
+
+  const pageTitle = "Luxury Rooms & Suites | Hotel Yellow Pagoda";
+
+  const pageDescription =
+    "Explore luxury rooms and premium suites at Hotel Yellow Pagoda. Enjoy elegant stays, modern amenities, and premium hospitality in Nepal.";
+
+  const ogImage = `${SITE_URL}/images/rooms/imgi_6_superior-king.jpg`;
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       const subtitle = subtitleRef.current;
@@ -212,28 +171,28 @@ const RoomPage = () => {
 
       if (!subtitle || !mainHeading || !subHeading) return;
 
-      // — Word-split: main heading —
-      const mainWords = mainHeading.innerText.split(' ');
+      // Word split: main heading
+      const mainWords = mainHeading.innerText.split(" ");
       mainHeading.innerHTML = mainWords
         .map((w) => `<span class="inline-block">${w}</span>`)
-        .join(' ');
-      const mainSpans = mainHeading.querySelectorAll('span');
+        .join(" ");
 
-      // — Word-split: sub heading —
-      const subWords = subHeading.innerText.split(' ');
+      const mainSpans = mainHeading.querySelectorAll("span");
+
+      // Word split: sub heading
+      const subWords = subHeading.innerText.split(" ");
       subHeading.innerHTML = subWords
         .map((w) => `<span class="inline-block">${w}</span>`)
-        .join(' ');
-      const subSpans = subHeading.querySelectorAll('span');
+        .join(" ");
 
-      // shared ScrollTrigger defaults
-      const st = (trigger, start = 'top 82%') => ({
+      const subSpans = subHeading.querySelectorAll("span");
+
+      const st = (trigger, start = "top 82%") => ({
         trigger,
         start,
-        toggleActions: 'play none none reverse',
+        toggleActions: "play none none reverse",
       });
 
-      // Subtitle
       gsap.fromTo(
         subtitle,
         { opacity: 0, y: 24 },
@@ -241,12 +200,11 @@ const RoomPage = () => {
           opacity: 1,
           y: 0,
           duration: 0.75,
-          ease: 'power2.out',
+          ease: "power2.out",
           scrollTrigger: st(subtitle),
         }
       );
 
-      // Main heading — staggered words with slight clip feel
       gsap.fromTo(
         mainSpans,
         { opacity: 0, y: 36, skewX: 4 },
@@ -256,12 +214,11 @@ const RoomPage = () => {
           skewX: 0,
           duration: 0.7,
           stagger: 0.09,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: st(mainHeading),
         }
       );
 
-      // Sub heading — softer stagger, delayed after main
       gsap.fromTo(
         subSpans,
         { opacity: 0, y: 20 },
@@ -271,8 +228,8 @@ const RoomPage = () => {
           duration: 0.55,
           stagger: 0.04,
           delay: 0.35,
-          ease: 'power2.out',
-          scrollTrigger: st(subHeading, 'top 85%'),
+          ease: "power2.out",
+          scrollTrigger: st(subHeading, "top 85%"),
         }
       );
     }, sectionRef);
@@ -282,47 +239,106 @@ const RoomPage = () => {
 
   return (
     <>
-      <div
+      {/* SEO */}
+      <Helmet>
+        <title>{pageTitle}</title>
+
+        <meta name="description" content={pageDescription} />
+        <meta
+          name="keywords"
+          content="luxury hotel rooms, boutique hotel Nepal, premium suites, Hotel Yellow Pagoda rooms, hotel accommodation Nepal"
+        />
+        <meta name="robots" content="index, follow" />
+
+        {/* Canonical */}
+        <link rel="canonical" href={PAGE_URL} />
+
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:url" content={PAGE_URL} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:alt" content="Luxury hotel rooms at Hotel Yellow Pagoda" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={ogImage} />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "Hotel Rooms - Hotel Yellow Pagoda",
+            url: PAGE_URL,
+            description: pageDescription,
+            image: ogImage,
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Luxury Rooms & Suites",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Premium Accommodation",
+              },
+            ],
+          })}
+        </script>
+      </Helmet>
+
+      {/* HERO SECTION */}
+      <section
         ref={sectionRef}
         className="relative min-h-screen w-full bg-cover bg-center bg-no-repeat overflow-hidden"
-        style={{ backgroundImage: "url('/images/rooms/imgi_6_superior-king.jpg')" }}
+        style={{
+          backgroundImage:
+            "url('/images/rooms/imgi_6_superior-king.jpg')",
+        }}
+        aria-label="Hotel room showcase"
       >
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/60" />
 
-        {/* Content */}
-        <div className="relative z-10 min-h-screen w-full flex flex-col items-center justify-center px-6 sm:px-6 md:px-8 py-20 md:py-24 lg:py-32">
-          <div className="w-full max-w-6xl mx-auto">
+        <div className="relative z-10 min-h-screen w-full flex flex-col items-center justify-center px-6 md:px-8 py-24">
+          <div className="w-full max-w-6xl mx-auto text-center">
 
             {/* Subtitle */}
             <p
               ref={subtitleRef}
-              className="uppercase text-xs sm:text-sm md:text-base text-white text-center font-semibold tracking-[0.2em] md:tracking-widest mb-4 md:mb-6"
+              className="uppercase text-xs sm:text-sm md:text-base text-white font-semibold tracking-widest mb-6"
             >
               Our Accommodations
             </p>
 
-            {/* Main Heading — bumped up on small screens */}
-            <h2
+            {/* Main Heading */}
+            <h1
               ref={mainHeadingRef}
-              className="text-5xl sm:text-5xl md:text-7xl font-medium text-white text-center tracking-wide md:tracking-[8px] leading-tight md:leading-[1.2] lg:leading-relaxed max-w-5xl mx-auto px-2"
+              className="text-5xl md:text-7xl font-medium text-white tracking-wide md:tracking-[8px] leading-tight"
             >
               Stay With Us
-            </h2>
+            </h1>
 
-            {/* Sub Heading — better line-height on small screens */}
-            <h3
+            {/* Sub Heading */}
+            <h2
               ref={subHeadingRef}
-              className="text-base sm:text-lg md:text-lg lg:text-xl font-medium text-white text-center tracking-wide md:tracking-[2px] leading-relaxed md:leading-[1.2] lg:leading-relaxed max-w-4xl mx-auto px-2 mt-6 sm:mt-8 md:mt-12"
+              className="text-base md:text-xl font-medium text-white mt-8 leading-relaxed max-w-4xl mx-auto"
             >
-              Spend your comfortable holiday in the heart of the beautiful Pokhara Valley.
-            </h3>
+              Spend your comfortable holiday in the heart of beautiful Nepal.
+            </h2>
 
           </div>
         </div>
-      </div>
+      </section>
 
-      <Accomodation />
+      {/* ACCOMMODATION SECTION */}
+      <section aria-label="Hotel room listings">
+        <Accomodation />
+      </section>
     </>
   );
 };

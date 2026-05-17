@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
 gsap.registerPlugin(ScrollTrigger)
 
 const activities = [
@@ -67,7 +66,7 @@ const activities = [
   },
 ]
 
-// ─── Single card ─────────────────────────────────────────────────────────────
+// ─── Single card ──────────────────────────────────────────────────────────────
 const ActivityCard = ({ activity }) => {
   const cardRef  = useRef(null)
   const imageRef = useRef(null)
@@ -77,9 +76,9 @@ const ActivityCard = ({ activity }) => {
   const descRef  = useRef(null)
 
   useEffect(() => {
-    // gsap.context scoped to this card — reverts only its own ScrollTriggers
-    const ctx = gsap.context(() => {
+    const isMobile = window.innerWidth < 768
 
+    const ctx = gsap.context(() => {
       const sharedTrigger = {
         trigger: cardRef.current,
         start: 'top 82%',
@@ -87,21 +86,33 @@ const ActivityCard = ({ activity }) => {
         toggleActions: 'play none none reverse',
       }
 
-      // Image slides in from its natural side + slight scale
-      gsap.fromTo(
-        imageRef.current,
-        { x: activity.imageLeft ? -80 : 80, opacity: 0, scale: 0.97 },
-        { x: 0, opacity: 1, scale: 1, duration: 1.1, ease: 'power3.out', scrollTrigger: sharedTrigger }
-      )
+      // FIX: On mobile use y-only animation (no x) so nothing slides off-screen.
+      // On desktop keep the original left/right x slide.
+      if (isMobile) {
+        gsap.fromTo(
+          imageRef.current,
+          { y: 40, opacity: 0, scale: 0.97 },
+          { y: 0, opacity: 1, scale: 1, duration: 1.1, ease: 'power3.out', scrollTrigger: sharedTrigger }
+        )
+        gsap.fromTo(
+          textRef.current,
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1.1, ease: 'power3.out', delay: 0.15, scrollTrigger: sharedTrigger }
+        )
+      } else {
+        gsap.fromTo(
+          imageRef.current,
+          { x: activity.imageLeft ? -80 : 80, opacity: 0, scale: 0.97 },
+          { x: 0, opacity: 1, scale: 1, duration: 1.1, ease: 'power3.out', scrollTrigger: sharedTrigger }
+        )
+        gsap.fromTo(
+          textRef.current,
+          { x: activity.imageLeft ? 80 : -80, opacity: 0 },
+          { x: 0, opacity: 1, duration: 1.1, ease: 'power3.out', delay: 0.15, scrollTrigger: sharedTrigger }
+        )
+      }
 
-      // Text column slides in from opposite side
-      gsap.fromTo(
-        textRef.current,
-        { x: activity.imageLeft ? 80 : -80, opacity: 0 },
-        { x: 0, opacity: 1, duration: 1.1, ease: 'power3.out', delay: 0.15, scrollTrigger: sharedTrigger }
-      )
-
-      // Label → title → description stagger within the text block
+      // Label → title → description stagger (safe on both viewports — y only)
       gsap.fromTo(
         [labelRef.current, titleRef.current, descRef.current],
         { y: 28, opacity: 0 },
@@ -116,31 +127,32 @@ const ActivityCard = ({ activity }) => {
         }
       )
 
-      // Gentle parallax on image while page scrolls
-      gsap.to(imageRef.current, {
-        yPercent: -6,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: cardRef.current,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1.2,
-        },
-      })
-
-    }, cardRef) // ← scoped: only kills triggers registered inside this context
+      // Parallax only on desktop — on mobile it can cause x-overflow artifacts
+      if (!isMobile) {
+        gsap.to(imageRef.current, {
+          yPercent: -6,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: cardRef.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1.2,
+          },
+        })
+      }
+    }, cardRef)
 
     return () => ctx.revert()
   }, [activity.imageLeft])
 
   // ── Image block ─────────────────────────────────────────────────────────
   const ImageBlock = () => (
-    <div ref={imageRef} className="relative w-full md:w-[52%] flex-shrink-0">
-      <div className="relative aspect-[4/3] md:aspect-auto md:h-[420px] group">
-
+    // FIX: overflow-hidden on the wrapper clips any in-progress GSAP x translate
+    // so it never creates a horizontal scrollbar during the animation.
+    <div className="w-full md:w-[52%] flex-shrink-0 overflow-hidden">
+      <div ref={imageRef} className="relative aspect-[4/3] md:aspect-auto md:h-[420px] group">
         {/* Decorative gold border frame */}
         <div className="absolute inset-4 border-2 border-[#ba9d75] z-10 pointer-events-none" />
-
         <div className="overflow-hidden w-full h-full">
           <img
             src={activity.imageSrc}
@@ -148,10 +160,8 @@ const ActivityCard = ({ activity }) => {
             className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
         </div>
-
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent pointer-events-none" />
-
         {/* Bottom overlay text */}
         <div className="absolute bottom-5 left-5 z-20">
           <p className="text-white text-[10px] tracking-[0.22em] uppercase font-semibold mb-1 opacity-75">
@@ -178,11 +188,9 @@ const ActivityCard = ({ activity }) => {
       <p ref={labelRef} className="text-[10px] tracking-[0.25em] uppercase font-semibold text-gray-400 mb-3">
         {activity.label}
       </p>
-
       <h2 ref={titleRef} className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 leading-snug mb-5 lg:whitespace-pre-line">
         {activity.title}
       </h2>
-
       <p
         ref={descRef}
         className={`text-sm text-gray-500 leading-relaxed mb-6 max-w-sm ${
@@ -213,7 +221,6 @@ const Activities2 = ({ labelRef, headingRef, subTextRef }) => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Header trio fades + rises on scroll into view
       const els = [labelRef?.current, headingRef?.current, subTextRef?.current].filter(Boolean)
       if (els.length) {
         gsap.fromTo(
@@ -239,8 +246,9 @@ const Activities2 = ({ labelRef, headingRef, subTextRef }) => {
   }, [labelRef, headingRef, subTextRef])
 
   return (
-    <section ref={sectionRef} className="py-24 bg-white">
-
+    // FIX: overflow-x-hidden on the section is the outermost safety net —
+    // catches any edge case where a translated element escapes its parent clip.
+    <section ref={sectionRef} className="py-24 bg-white overflow-x-hidden">
       {/* Intro Header */}
       <div className="max-w-3xl mx-auto text-center mb-16 md:mb-24 px-4 sm:px-6 lg:px-8">
         <p
@@ -249,7 +257,6 @@ const Activities2 = ({ labelRef, headingRef, subTextRef }) => {
         >
           Introducing Our Services &amp; Facilities
         </p>
-
         <h2
           ref={headingRef}
           className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-900 leading-tight mb-6"
@@ -258,7 +265,6 @@ const Activities2 = ({ labelRef, headingRef, subTextRef }) => {
           <br className="hidden sm:block" />
           ensure your trip is perfect.
         </h2>
-
         <p
           ref={subTextRef}
           className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-2xl mx-auto"
@@ -275,7 +281,6 @@ const Activities2 = ({ labelRef, headingRef, subTextRef }) => {
           <ActivityCard key={activity.id} activity={activity} />
         ))}
       </div>
-
     </section>
   )
 }

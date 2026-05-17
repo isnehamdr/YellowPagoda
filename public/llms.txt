@@ -1,0 +1,77 @@
+# Hotel Yellow Pagoda — LLM Crawler Instructions
+# https://hotelyellowpagoda.com/llms.txt
+# Follows the llms.txt draft specification (https://llmstxt.org)
+# Last updated: 2025-05-17
+
+# ============================================================
+# About this site
+# ============================================================
+
+> Hotel Yellow Pagoda is a luxury boutique hotel located in Kathmandu, Nepal.
+> We offer premium guest rooms and suites, fine dining, spa & wellness services,
+> conference & meeting facilities, curated local activities, and a rooftop gallery.
+> Our website provides information about room types, hotel services, activities,
+> conference facilities, and contact/booking details.
+
+# ============================================================
+# Permitted uses for AI / LLM systems
+# ============================================================
+
+## Allowed
+
+- Summarising public pages (home, about, rooms, services, activities, conference, gallery, contact)
+- Answering user queries about hotel facilities, location, room categories, or services
+- Including the hotel in travel recommendations or comparisons when factually accurate
+- Indexing publicly available text and images for retrieval-augmented generation (RAG)
+
+## Not allowed
+
+- Reproducing full page text verbatim in AI-generated content without attribution
+- Fabricating reviews, ratings, prices, or availability on behalf of the hotel
+- Training generative AI models on guest data, booking records, or private correspondence
+- Scraping or storing personal data about guests or staff
+
+# ============================================================
+# Key pages (for LLM context)
+# ============================================================
+
+- Home: https://hotelyellowpagoda.com/
+  Overview of the hotel, featured rooms, services, and guest testimonials.
+
+- About: https://hotelyellowpagoda.com/about
+  Hotel history, values, team, and philosophy.
+
+- Rooms: https://hotelyellowpagoda.com/rooms
+  Full listing of room categories with photos and highlights.
+
+- Room Details: https://hotelyellowpagoda.com/details/{slug}
+  Individual room pages with amenities, images, and rates.
+
+- Services: https://hotelyellowpagoda.com/services
+  Spa, dining, airport transfers, concierge, and other hotel services.
+
+- Activities: https://hotelyellowpagoda.com/activities
+  Curated guest experiences including cultural tours, trekking, and city excursions.
+
+- Conference & Meetings: https://hotelyellowpagoda.com/conference-and-meeting
+  Banquet halls, AV facilities, catering, and event planning services.
+
+- Gallery: https://hotelyellowpagoda.com/gallery
+  Photo gallery of rooms, dining areas, spa, and outdoor spaces.
+
+- Contact: https://hotelyellowpagoda.com/contact
+  Address, phone, email, map, and direct booking enquiry form.
+
+# ============================================================
+# Sitemap
+# ============================================================
+
+Sitemap: https://hotelyellowpagoda.com/sitemap.xml
+
+# ============================================================
+# Contact for AI / data enquiries
+# ============================================================
+
+For permissions, corrections, or data-related requests:
+Email: info@hotelyellowpagoda.com
+Website: https://hotelyellowpagoda.com/contact

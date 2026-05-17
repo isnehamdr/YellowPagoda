@@ -11,6 +11,10 @@ import {
 } from "react-router-dom";
 import Footer from "./Components/Footer";
 
+// SEO — react-helmet-async
+// Install: npm install react-helmet-async
+import { HelmetProvider } from "react-helmet-async";
+
 // LENIS
 import Lenis from "@studio-freight/lenis";
 import BackToTopButton from "./Components/BackToTopButton";
@@ -59,28 +63,30 @@ function App() {
   }, []);
 
   return (
-    <>
+    // HelmetProvider must wrap the entire app so every page component
+    // can use <Helmet> to update <head> tags dynamically.
+    <HelmetProvider>
       <Router>
         <ScrollToTop />
         <Navbar />
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutPage/>} />
-          <Route path="/rooms" element={<RoomPage/>} />
-          <Route path="/details/:slug" element={<RoomDetail/>} />
-          <Route path="/contact" element={<Contact/>} />
-          <Route path="/services" element={<ServicePage/>} />
-          <Route path="/activities" element={<Activitiespage/>} />
-          <Route path="/conference-and-meeting" element={<Conference/>} />
-          <Route path="/gallery" element={<Gallery/>} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/rooms" element={<RoomPage />} />
+          <Route path="/details/:slug" element={<RoomDetail />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<ServicePage />} />
+          <Route path="/activities" element={<Activitiespage />} />
+          <Route path="/conference-and-meeting" element={<Conference />} />
+          <Route path="/gallery" element={<Gallery />} />
           {/* other routes */}
         </Routes>
 
         <BackToTopButton />
         <Footer />
       </Router>
-    </>
+    </HelmetProvider>
   );
 }
 

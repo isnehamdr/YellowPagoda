@@ -1,0 +1,63 @@
+# ============================================================
+# Hotel Yellow Pagoda — robots.txt
+# https://hotelyellowpagoda.com/robots.txt
+# ============================================================
+
+# Allow all well-behaved crawlers to index the full public site
+User-agent: *
+Allow: /
+
+# ---- Block private / admin areas ----
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /private/
+Disallow: /*.json$
+
+# ---- Block duplicate/utility paths ----
+Disallow: /search?
+Disallow: /*?ref=
+Disallow: /*?utm_
+
+# ---- Static assets (allow so images appear in Google Images) ----
+Allow: /images/
+Allow: /assets/
+
+# ---- Sitemap reference ----
+Sitemap: https://hotelyellowpagoda.com/sitemap.xml
+
+# ============================================================
+# Google-specific directives
+# ============================================================
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /assets/
+
+# ============================================================
+# Bing
+# ============================================================
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Crawl-delay: 5
+
+# ============================================================
+# Aggressive / bad-faith crawlers — block entirely
+# ============================================================
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
