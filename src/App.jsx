@@ -10,9 +10,9 @@ import {
   useLocation,
 } from "react-router-dom";
 import Footer from "./Components/Footer";
+import Booking from "./Pages/Booking";
 
-// SEO — react-helmet-async
-// Install: npm install react-helmet-async
+
 import { HelmetProvider } from "react-helmet-async";
 
 // LENIS
@@ -80,6 +80,7 @@ function App() {
           <Route path="/activities" element={<Activitiespage />} />
           <Route path="/conference-and-meeting" element={<Conference />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/booking" element={<Booking/>} />
           {/* other routes */}
         </Routes>
 

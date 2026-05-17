@@ -212,7 +212,7 @@ const Testimonials = () => {
                 <Slider {...settings} className="testimonial-slider">
                     {testimonials.map((testimonial, idx) => (
                         <div key={testimonial.id} className="px-4">
-                            <div className="testimonial-card flex flex-col items-center text-center h-full">
+                            <div className="testimonial-card flex h-full flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2">
                                 
                                 {/* Stars */}
                                 <div className="flex mb-4">
@@ -256,16 +256,6 @@ const Testimonials = () => {
                     ))}
                 </Slider>
             </div>
-
-            {/* Add custom styles for enhanced testimonial cards */}
-            <style jsx>{`
-                .testimonial-card {
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                }
-                .testimonial-card:hover {
-                    transform: translateY(-8px);
-                }
-            `}</style>
         </div>
     );
 };

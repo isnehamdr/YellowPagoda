@@ -8,7 +8,7 @@ const Banner = () => {
             <div className="relative w-full h-[60vh] md:h-[70vh] lg:h-[90vh]">
                 <img 
                     className="w-full h-full object-cover" 
-                    src="images/about.jpeg" 
+                    src="images/hero.jpg" 
                     alt="Yellow Pagoda - Luxury Resort & Event Venue" 
                 />
                 <div className="absolute inset-0 bg-black/40"></div>

@@ -255,6 +255,9 @@ const About = () => {
     }, [])
 
     return (
+<>
+
+
         <div ref={sectionRef} className='overflow-hidden'>
             <div ref={textSectionRef} className="max-w-5xl mx-auto px-4 text-center space-y-6 py-24">
                 <p ref={welcomeTextRef} className='font-medium tracking-[1px] uppercase text-sm'>Welcome to Hotel Yellow Pagoda </p>
@@ -335,6 +338,7 @@ const About = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

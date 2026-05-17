@@ -215,15 +215,24 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useNavigate } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About3 = () => {
+  const navigate = useNavigate();
   const sectionRef = useRef(null);
   const subtitleRef = useRef(null);
   const headingRef = useRef(null);
   const gridRef = useRef(null);
   const roomCardsRef = useRef([]);
+
+  const roomCards = [
+    { title: 'Executive Suite Rooms', slug: 'executive-suite' },
+    { title: 'Deluxe King Rooms', slug: 'deluxe-king-room' },
+    { title: 'Deluxe Twin Rooms', slug: 'deluxe-twin-room' },
+    { title: 'Superior King Rooms', slug: 'superior-king-room' },
+  ];
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -346,38 +355,19 @@ const About3 = () => {
             ref={gridRef}
             className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 lg:gap-8 mt-10 md:mt-14 lg:mt-20 w-full"
           >
-            <div
-              ref={(el) => (roomCardsRef.current[0] = el)}
-              className="room-card p-5 md:p-6 rounded-xl border border-white/20 text-center transition-all duration-300 hover:bg-black/40 hover:scale-105 hover:border-white/40"
-            >
-              <p className="text-white text-xl sm:text-2xl md:text-2xl lg:text-3xl font-semibold leading-snug">
-                Executive Suite Rooms
-              </p>
-            </div>
-            <div
-              ref={(el) => (roomCardsRef.current[1] = el)}
-              className="room-card p-5 md:p-6 rounded-xl border border-white/20 text-center transition-all duration-300 hover:bg-black/40 hover:scale-105 hover:border-white/40"
-            >
-              <p className="text-white text-xl sm:text-2xl md:text-2xl lg:text-3xl font-semibold leading-snug">
-                Deluxe King Rooms
-              </p>
-            </div>
-            <div
-              ref={(el) => (roomCardsRef.current[2] = el)}
-              className="room-card p-5 md:p-6 rounded-xl border border-white/20 text-center transition-all duration-300 hover:bg-black/40 hover:scale-105 hover:border-white/40"
-            >
-              <p className="text-white text-xl sm:text-2xl md:text-2xl lg:text-3xl font-semibold leading-snug">
-                Deluxe Queen Rooms
-              </p>
-            </div>
-            <div
-              ref={(el) => (roomCardsRef.current[3] = el)}
-              className="room-card p-5 md:p-6 rounded-xl border border-white/20 text-center transition-all duration-300 hover:bg-black/40 hover:scale-105 hover:border-white/40"
-            >
-              <p className="text-white text-xl sm:text-2xl md:text-2xl lg:text-3xl font-semibold leading-snug">
-                Superior King Rooms
-              </p>
-            </div>
+            {roomCards.map((room, index) => (
+              <button
+                key={room.slug}
+                type="button"
+                ref={(el) => (roomCardsRef.current[index] = el)}
+                onClick={() => navigate(`/details/${room.slug}`)}
+                className="room-card cursor-pointer p-5 md:p-6 rounded-xl border border-white/20 text-center bg-white/5 transition-all duration-300 hover:bg-white/10 hover:backdrop-blur-md hover:scale-105 hover:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/70 focus:bg-white/10 focus:backdrop-blur-md"
+              >
+                <p className="text-white text-xl sm:text-2xl md:text-2xl lg:text-3xl font-semibold leading-snug">
+                  {room.title}
+                </p>
+              </button>
+            ))}
           </div>
 
         </div>

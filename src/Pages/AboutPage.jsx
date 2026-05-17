@@ -152,7 +152,7 @@ const AboutPage = () => {
       <div
         ref={heroRef}
         className="min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden"
-        style={{ backgroundImage: "url('/images/aboutbg.jpg')" }}
+        style={{ backgroundImage: "url('/images/lobby2.png')" }}
       >
         <div className="min-h-screen bg-black/60 flex items-center justify-center px-5 sm:px-6 lg:px-8 py-16">
           <div

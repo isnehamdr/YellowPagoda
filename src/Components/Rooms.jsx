@@ -212,16 +212,7 @@ const Rooms = () => {
                     {slides.map((slide, index) => (
                         <SwiperSlide
                             key={slide.id}
-                            className="transition-all duration-500"
-                            style={{
-                                width: '70%',
-                                '@media (min-width: 640px)': {
-                                    width: '60%'
-                                },
-                                '@media (min-width: 1024px)': {
-                                    width: '60%'
-                                }
-                            }}
+                            className="!w-[70%] sm:!w-[60%] transition-all duration-500"
                         >
                             {({ isActive }) => (
                                 <div className={`relative transition-all duration-300 ${isActive ? 'scale-100 opacity-100' : 'scale-95 opacity-100'}`}>

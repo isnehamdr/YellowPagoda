@@ -111,14 +111,18 @@ const Hero = () => {
           exceptional service, and sumptuous decor.
         </p>
 
-        {/* Optional CTA Button - uncomment if needed */}
-        {/* <button
-          ref={buttonRef}
-          className="bg-white text-black px-8 py-3 rounded-full hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105"
-        >
-          Explore More
-        </button> */}
+        
       </div>
+
+      <div className="absolute inset-x-0 bottom-4 z-50 px-4 sm:px-6 lg:px-8">
+        <div id="block-search" className="mx-auto w-full max-w-7xl">
+          <div
+            id="be-search-form"
+            className="be-container min-h-[88px] rounded-2xl bg-white backdrop-blur-md px-4"
+          />
+        </div>
+      </div>
+
     </div>
   );
 };

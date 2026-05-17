@@ -145,7 +145,7 @@ const Footer = () => {
             </div>
 
             {/* Copyright Section */}
-            <div className="w-full bg-[#972629] py-6">
+            <div className="w-full bg-gray-700/60 py-6 backdrop-blur-md">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <p className="text-white text-sm mb-2 md:mb-0">

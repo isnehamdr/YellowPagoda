@@ -14,7 +14,7 @@ const NAV_LINKS = [
   { label: "About",   path: "/about" },
   { label: "Rooms",   path: "/rooms" },
   { label: "Contact", path: "/contact" },
-  { label: "Pages",   path: "/pages", dropdown: PAGES_DROPDOWN },
+  { label: "Explore",   path: "/pages", dropdown: PAGES_DROPDOWN },
 ];
 
 export default function Navbar() {
@@ -220,7 +220,7 @@ export default function Navbar() {
           </nav>
 
           {/* BOOK NOW — desktop */}
-          <Link to="/book-now" className="hidden lg:block">
+          <Link to="/booking" className="hidden lg:block">
             <button className="group relative h-[calc(48px+8px)] flex items-center hover:text-black justify-center rounded-full bg-black/15 backdrop-blur-md py-1 pl-6 pr-14 font-medium text-neutral-50 transition-all duration-300 cursor-pointer">
               <span className="z-10 pr-2">Book Now</span>
               <div className="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-white transition-all duration-300 group-hover:w-[calc(100%-8px)]">
@@ -238,7 +238,7 @@ export default function Navbar() {
           {/* MOBILE MENU BUTTON */}
           <button
             onClick={() => setMenuOpen(true)}
-            className="lg:hidden w-14 h-14 rounded-full border border-[#800020] bg-white/10 backdrop-blur-md flex items-center justify-center text-[#800020] cursor-pointer"
+            className="lg:hidden w-14 h-14 rounded-full border border-white bg-white flex items-center justify-center text-black cursor-pointer"
             aria-label="Open menu"
           >
             <Menu size={26} />
@@ -260,18 +260,18 @@ export default function Navbar() {
         className={`fixed top-0 right-0 h-full w-[300px] z-50 transform transition-transform duration-500 ease-in-out flex flex-col overflow-hidden ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
-        style={{ background: "linear-gradient(135deg, #800020 0%, #5a0015 100%)" }}
+        style={{ background: "black" }}
       >
         {/* Top */}
         <div className="flex items-center justify-between p-6 border-b border-white/20 flex-shrink-0">
           <div className="w-20">
-            <Link to="/" onClick={closeMobileMenu}>
+            {/* <Link to="/" onClick={closeMobileMenu}>
               <img src="images/logo.png" className="w-20 cursor-pointer" alt="logo" />
-            </Link>
+            </Link> */}
           </div>
           <button
             onClick={closeMobileMenu}
-            className="w-11 h-11 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-all duration-300 cursor-pointer"
+            className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center hover:bg-white/20 transition-all duration-300 cursor-pointer"
             aria-label="Close menu"
           >
             <X size={22} />
@@ -287,7 +287,7 @@ export default function Navbar() {
                   onClick={() => setPagesOpen((v) => !v)}
                   className={`w-full flex items-center justify-between px-5 py-4 rounded-2xl text-lg font-medium transition-all duration-300 cursor-pointer ${
                     isPagesActive()
-                      ? "bg-white text-[#800020]"
+                      ? "bg-white text-black"
                       : "text-white hover:bg-white/10"
                   }`}
                 >
@@ -310,7 +310,7 @@ export default function Navbar() {
                         <button
                           className={`w-full text-left px-5 py-3 rounded-xl text-base font-medium transition-all duration-200 cursor-pointer ${
                             location.pathname === sub.path
-                              ? "bg-white/25 text-white"
+                              ? "bg-white text-black"
                               : "text-white/75 hover:bg-white/10 hover:text-white"
                           }`}
                         >
@@ -326,7 +326,7 @@ export default function Navbar() {
                 <button
                   className={`w-full text-left px-5 py-4 rounded-2xl text-lg font-medium transition-all duration-300 cursor-pointer ${
                     isActive(item.path)
-                      ? "bg-white text-[#800020]"
+                      ? "bg-white text-black"
                       : "text-white hover:bg-white/10"
                   }`}
                 >
@@ -339,13 +339,13 @@ export default function Navbar() {
 
         {/* Book Now — pinned to bottom */}
         <div className="p-6 border-t border-white/10 flex-shrink-0">
-          <Link to="/book-now" onClick={closeMobileMenu}>
-            <button className="group relative w-full inline-flex h-[52px] items-center justify-center rounded-full bg-white/10 backdrop-blur-md py-1 pl-6 pr-14 font-medium text-white transition-all duration-300 hover:text-white overflow-hidden cursor-pointer">
+          <Link to="/booking" onClick={closeMobileMenu}>
+            <button className="group relative w-full inline-flex h-[52px] items-center justify-center rounded-full bg-white backdrop-blur-md py-1 pl-6 pr-14 font-medium text-black transition-all duration-300 hover:text-white overflow-hidden cursor-pointer">
               <span className="z-10 pr-2">Book Now</span>
               <div className="absolute right-1 inline-flex h-11 w-11 items-center justify-end rounded-full bg-white transition-all duration-300 group-hover:w-[calc(100%-8px)]">
                 <div className="mr-3.5 flex items-center justify-center">
                   <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-[#800020] transition-transform duration-300 group-hover:translate-x-0.5">
+                    className="h-5 w-5 text-black transition-transform duration-300 group-hover:translate-x-0.5">
                     <path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
                       fill="currentColor" fillRule="evenodd" clipRule="evenodd" />
                   </svg>
