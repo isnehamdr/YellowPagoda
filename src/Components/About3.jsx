@@ -361,7 +361,7 @@ const About3 = () => {
                 type="button"
                 ref={(el) => (roomCardsRef.current[index] = el)}
                 onClick={() => navigate(`/details/${room.slug}`)}
-                className="room-card cursor-pointer p-5 md:p-6 rounded-xl border border-white/20 text-center bg-white/5 transition-all duration-300 hover:bg-white/10 hover:backdrop-blur-md hover:scale-105 hover:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/70 focus:bg-white/10 focus:backdrop-blur-md"
+                className="room-card cursor-pointer p-5 md:p-6 rounded-xl border  text-center transition-all duration-300 bg-white/10 backdrop-blur-md hover:scale-105 border-white/40 focus:outline-none focus:ring-2 focus:ring-white/70 focus:bg-white/10 focus:backdrop-blur-md"
               >
                 <p className="text-white text-xl sm:text-2xl md:text-2xl lg:text-3xl font-semibold leading-snug">
                   {room.title}

@@ -18,13 +18,13 @@
 // );
 // const BedIcon = () => (
 //   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-//     <path d="M2 4v16" /><path d="M2 8h18a2 2 0 0 1 2 2v10" />
+//     <path d="M2 4v16" /><path d="M2 8h28a2 2 0 0 1 2 2v10" />
 //     <path d="M2 17h20" /><path d="M6 8v9" />
 //   </svg>
 // );
 // const BathIcon = () => (
 //   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-//     <path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" />
+//     <path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2v-5" />
 //     <line x1="10" y1="5" x2="8" y2="7" /><line x1="2" y1="12" x2="22" y2="12" />
 //   </svg>
 // );
@@ -269,13 +269,13 @@ const GuestsIcon = () => (
 );
 const BedIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M2 4v16" /><path d="M2 8h18a2 2 0 0 1 2 2v10" />
+    <path d="M2 4v16" /><path d="M2 8h28a2 2 0 0 1 2 2v10" />
     <path d="M2 17h20" /><path d="M6 8v9" />
   </svg>
 );
 const BathIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" />
+    <path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h22a2 2 0 0 0 2-2v-5" />
     <line x1="10" y1="5" x2="8" y2="7" /><line x1="2" y1="12" x2="22" y2="12" />
   </svg>
 );

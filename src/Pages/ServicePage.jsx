@@ -313,12 +313,12 @@ const ServicePage = () => {
               </p>
 
               {/* Main Heading */}
-              <h1
+              <h2
                 ref={mainHeadingRef}
                 className="text-5xl md:text-7xl font-medium text-white tracking-[2px] md:tracking-[8px] leading-tight"
               >
                 Premium Services
-              </h1>
+              </h2>
 
               {/* Sub Heading */}
               <h2

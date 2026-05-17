@@ -220,7 +220,7 @@ export default function Navbar() {
           </nav>
 
           {/* BOOK NOW — desktop */}
-          <Link to="/booking" className="hidden lg:block">
+          <Link to="/book" className="hidden lg:block">
             <button className="group relative h-[calc(48px+8px)] flex items-center hover:text-black justify-center rounded-full bg-black/15 backdrop-blur-md py-1 pl-6 pr-14 font-medium text-neutral-50 transition-all duration-300 cursor-pointer">
               <span className="z-10 pr-2">Book Now</span>
               <div className="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-white transition-all duration-300 group-hover:w-[calc(100%-8px)]">
@@ -339,7 +339,7 @@ export default function Navbar() {
 
         {/* Book Now — pinned to bottom */}
         <div className="p-6 border-t border-white/10 flex-shrink-0">
-          <Link to="/booking" onClick={closeMobileMenu}>
+          <Link to="/book" onClick={closeMobileMenu}>
             <button className="group relative w-full inline-flex h-[52px] items-center justify-center rounded-full bg-white backdrop-blur-md py-1 pl-6 pr-14 font-medium text-black transition-all duration-300 hover:text-white overflow-hidden cursor-pointer">
               <span className="z-10 pr-2">Book Now</span>
               <div className="absolute right-1 inline-flex h-11 w-11 items-center justify-end rounded-full bg-white transition-all duration-300 group-hover:w-[calc(100%-8px)]">

@@ -162,12 +162,12 @@ const Conference = () => {
               Our Conference Facilities
             </p>
 
-            <h1
+            <h2
               ref={mainHeadingRef}
               className="text-5xl sm:text-5xl md:text-7xl font-medium text-white text-center tracking-wide md:tracking-[8px] leading-tight md:leading-[1.2] lg:leading-relaxed max-w-5xl mx-auto px-2"
             >
               Conference & Meeting Spaces
-            </h1>
+            </h2>
 
             <h2
               ref={subHeadingRef}

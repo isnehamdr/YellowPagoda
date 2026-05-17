@@ -261,7 +261,7 @@ const About = () => {
         <div ref={sectionRef} className='overflow-hidden'>
             <div ref={textSectionRef} className="max-w-5xl mx-auto px-4 text-center space-y-6 py-24">
                 <p ref={welcomeTextRef} className='font-medium tracking-[1px] uppercase text-sm'>Welcome to Hotel Yellow Pagoda </p>
-                <h1 ref={headingRef} className='text-3xl sm:text-5xl text-[#1a1b1a] sm:leading-[65px]'>Exceptional Chalets, tailored services and the experience of unique holidays</h1>
+                <h2 ref={headingRef} className='text-3xl sm:text-5xl text-[#1a1b1a] sm:leading-[65px]'>Exceptional Chalets, tailored services and the experience of unique holidays</h2>
                 <p ref={descriptionRef} className='text-[#333632] leading-[30px] mb-12 text-[18px]'>We are located in the heart of the city of Pokhara minutes walk to the Lakeside, where
                     every corner is a showpiece of Nepali natural history and culture. Morover the modern global
                     backpacking travelers most preferred hub in Pokhara-Lakeside is also just a few minutes walk from

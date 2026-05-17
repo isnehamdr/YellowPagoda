@@ -179,7 +179,7 @@ const Rooms = () => {
                 <div className="max-w-5xl px-4 mx-auto pt-24">
                     <div className="text-center space-y-6 mb-16">
                         <p ref={welcomeTextRef} className='font-medium tracking-[1px] uppercase text-sm text-white'>Welcome to Hotel Yellow Pagoda</p>
-                        <h1 ref={headingRef} className='text-5xl text-white leading-[65px]'>Select Your Cozy Room</h1>
+                        <h2 ref={headingRef} className='text-5xl text-white leading-[65px]'>Select Your Cozy Room</h2>
                         <p ref={descriptionRef} className='text-white leading-[30px] text-[18px]'>In a new setting composed of exceptional hotels chalets, nestled in a forest of pine trees, the Hotel Yellow Pagoda is expanding into a harmonious and refined unit that affirms it's purpose: to sublimate the stay of its guests by a tailor-made service.</p>
                     </div>
                 </div>

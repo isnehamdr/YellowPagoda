@@ -25,6 +25,7 @@ import ServicePage from "./Pages/ServicePage";
 import Activitiespage from "./Pages/Activitiespage";
 import Conference from "./Pages/Conference";
 import Gallery from "./Pages/Gallery";
+import NotFound from "./Pages/NotFound";
 
 function ScrollToTop() {
   const location = useLocation();
@@ -81,7 +82,7 @@ function App() {
           <Route path="/conference-and-meeting" element={<Conference />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/booking" element={<Booking/>} />
-          {/* other routes */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         <BackToTopButton />

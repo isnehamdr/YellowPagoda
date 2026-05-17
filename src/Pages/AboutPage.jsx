@@ -163,9 +163,9 @@ const AboutPage = () => {
               An Iconic Hotel in the Heart of Pokhara
             </p>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-medium mb-6 md:mb-10 leading-tight">
+            <h2 className="text-5xl sm:text-6xl md:text-7xl font-medium mb-6 md:mb-10 leading-tight">
               About The Hotel
-            </h1>
+            </h2>
 
             <p className="text-base sm:text-lg md:text-lg font-medium max-w-2xl mx-auto leading-7 sm:leading-8 px-2 sm:px-0">
               A luxury boutique hotel in the heart of wine country

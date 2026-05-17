@@ -131,31 +131,20 @@ const Footer = () => {
                                 <div className="border border-gray-300 rounded-full px-2 sm:px-8 py-2 sm:py-4 w-full max-w-max">
                                     <div className="flex flex-wrap items-center justify-center gap-x-0 text-gray-300">
                                         <Link to="/" className="hover:text-white transition px-3 sm:px-4 border-r border-gray-300 text-sm sm:text-base">Home</Link>
-                                                    <Link to="/about" className="hover:text-white transition px-3 sm:px-4 border-r border-gray-300 text-sm sm:text-base">About Us</Link>
+                                        <Link to="/about" className="hover:text-white transition px-3 sm:px-4 border-r border-gray-300 text-sm sm:text-base">About Us</Link>
                                         <Link to="/rooms" className="hover:text-white transition px-3 sm:px-4 border-r border-gray-300 text-sm sm:text-base">Rooms & Suites</Link>
-                                       
-                            
                                         <Link to="/contact" className="hover:text-white transition px-3 sm:px-4 text-sm sm:text-base">Contact</Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            {/* Copyright Section */}
-            <div className="w-full bg-gray-700/60 py-6 backdrop-blur-md">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="flex flex-col md:flex-row justify-between items-center">
-                        <p className="text-white text-sm mb-2 md:mb-0">
-                            &copy; {new Date().getFullYear()} Hotel Yellow Pagoda. All rights reserved. Crafted by <a href="https://www.sait.com.np/" target='_blank'>S.A I.T Solution Nepal</a>
+                    {/* Copyright Section - Fixed */}
+                    <div className="border-t border-gray-700 mt-6 pt-6 pb-8">
+                        <p className="text-white text-sm text-center">
+                            &copy; {new Date().getFullYear()} Hotel Yellow Pagoda. All rights reserved. Crafted by <a href="https://www.sait.com.np/" target='_blank' rel="noopener noreferrer" className="hover:text-yellow-500 transition">S.A I.T Solution Nepal</a>
                         </p>
-                        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-                            <Link to="/privacy" className="text-white hover:text-white text-sm transition">Privacy Policy</Link>
-                            <Link to="/terms" className="text-white hover:text-white text-sm transition">Terms of Service</Link>
-                            <Link to="/cookies" className="text-white hover:text-white text-sm transition">Cookies Policy</Link>
-                        </div>
                     </div>
                 </div>
             </div>

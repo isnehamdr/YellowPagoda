@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -42,12 +42,59 @@ const Gallery = () => {
   const subHeadingRef = useRef(null);
   const introRef      = useRef(null);
   const cardRefs      = useRef([]);
+  
+  // Lightbox state
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const mobileSliderSettings = {
     dots: false, arrows: false, infinite: true, speed: 500,
     slidesToShow: 1, slidesToScroll: 1, autoplay: true,
     autoplaySpeed: 3000, adaptiveHeight: true,
   };
+
+  // Open lightbox with selected image
+  const openLightbox = (index) => {
+    setCurrentImageIndex(index);
+    setLightboxOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  // Close lightbox
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    document.body.style.overflow = "auto";
+  };
+
+  // Navigate to next image
+  const nextImage = (e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
+  };
+
+  // Navigate to previous image
+  const prevImage = (e) => {
+    e.stopPropagation();
+    setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
+
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!lightboxOpen) return;
+      
+      if (e.key === "Escape") {
+        closeLightbox();
+      } else if (e.key === "ArrowRight") {
+        nextImage(e);
+      } else if (e.key === "ArrowLeft") {
+        prevImage(e);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightboxOpen]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -238,7 +285,8 @@ const Gallery = () => {
                 <article
                   key={image.id}
                   ref={(el) => (cardRefs.current[index] = el)}
-                  className="px-1"
+                  className="px-1 cursor-pointer"
+                  onClick={() => openLightbox(index)}
                 >
                   <div className="overflow-hidden bg-[#f7f4ee] group">
                     <div className="relative h-[280px] overflow-hidden">
@@ -261,7 +309,8 @@ const Gallery = () => {
               <article
                 key={image.id}
                 ref={(el) => (cardRefs.current[index] = el)}
-                className="mb-4 md:mb-5 break-inside-avoid overflow-hidden bg-[#f7f4ee] group"
+                className="mb-4 md:mb-5 break-inside-avoid overflow-hidden bg-[#f7f4ee] group cursor-pointer"
+                onClick={() => openLightbox(index)}
               >
                 <div className={`relative ${image.height} overflow-hidden`}>
                   <img
@@ -276,6 +325,64 @@ const Gallery = () => {
           </div>
         </div>
       </section>
+
+      {/* LIGHTBOX MODAL */}
+      {lightboxOpen && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center"
+          onClick={closeLightbox}
+        >
+          {/* Close button */}
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10 text-white hover:text-gray-300 transition-colors duration-200"
+            aria-label="Close lightbox"
+          >
+            <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Previous button */}
+          <button
+            onClick={prevImage}
+            className="absolute left-2 sm:left-6 md:left-10 z-10 text-white hover:text-gray-300 transition-colors duration-200 bg-black/30 hover:bg-black/50 rounded-full p-2 sm:p-3"
+            aria-label="Previous image"
+          >
+            <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Next button */}
+          <button
+            onClick={nextImage}
+            className="absolute right-2 sm:right-6 md:right-10 z-10 text-white hover:text-gray-300 transition-colors duration-200 bg-black/30 hover:bg-black/50 rounded-full p-2 sm:p-3"
+            aria-label="Next image"
+          >
+            <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Image counter */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-sm sm:text-base bg-black/50 px-3 py-1 rounded-full">
+            {currentImageIndex + 1} / {galleryImages.length}
+          </div>
+
+          {/* Main image */}
+          <div
+            className="relative w-full h-full flex items-center justify-center p-4 sm:p-8 md:p-12"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={galleryImages[currentImageIndex].src}
+              alt={galleryImages[currentImageIndex].alt}
+              className="max-w-full max-h-full object-contain"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

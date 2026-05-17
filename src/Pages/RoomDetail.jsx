@@ -106,7 +106,7 @@
 //     return (
 //       <div className="min-h-screen flex items-center justify-center bg-white px-4">
 //         <div className="text-center max-w-lg">
-//           <h1 className="text-3xl font-semibold text-gray-900 mb-4">Room not found</h1>
+//           <h2 className="text-3xl font-semibold text-gray-900 mb-4">Room not found</h2>
 //           <p className="text-gray-500 mb-6">
 //             The room you are looking for does not exist or its slug does not match the room data.
 //           </p>
@@ -143,9 +143,9 @@
 //             <p className="text-white/80 tracking-[3px] uppercase text-xs sm:text-sm mb-3 sm:mb-4">
 //               Our Rooms
 //             </p>
-//             <h1 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
+//             <h2 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
 //               {room.title}
-//             </h1>
+//             </h2>
 //           </div>
 //         </div>
 //       </div>
@@ -427,9 +427,9 @@ const RoomDetail = () => {
 
         <div className="min-h-screen flex items-center justify-center bg-white px-4">
           <div className="text-center max-w-lg">
-            <h1 className="text-3xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-3xl font-semibold text-gray-900 mb-4">
               Room not found
-            </h1>
+            </h2>
 
             <p className="text-gray-500 mb-6">
               The room you are looking for does not exist or its slug does not
@@ -533,9 +533,9 @@ const RoomDetail = () => {
                 Our Rooms
               </p>
 
-              <h1 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
+              <h2 className="text-white text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
                 {room.title}
-              </h1>
+              </h2>
             </div>
           </div>
         </div>
@@ -548,7 +548,7 @@ const RoomDetail = () => {
             <div className="flex-1 min-w-0">
 
               {/* Gallery */}
-              <div ref={galleryRef} className="mb-8 md:mb-10">
+              <div ref={galleryRef} className="mb-8 md:mt-8">
                 <div className="w-full h-[220px] sm:h-[320px] md:h-[400px] rounded-2xl md:rounded-3xl overflow-hidden mb-3 md:mb-4 shadow-sm">
                   <img
                     src={room.images?.[galleryActiveIndex]}

@@ -13,39 +13,38 @@ const Services = () => {
     const serviceCardsRef = useRef([])
     const rightImageRef = useRef(null)
 
-    const services = [
+  const services = [
         {
             icon: "images/icons/car.png",
             title: "Airport Pick-up Service",
-            desc: "Lorem ipsum proin gravida velit auctor sde re sit amet space.",
+            desc: "Private airport transfers with professional drivers for a seamless arrival and departure experience.",
         },
         {
             icon: "images/icons/house-keeping.png",
             title: "Housekeeper Services",
-            desc: "Lorem ipsum proin gravida velit auctor sde re sit amet space.",
+            desc: "Daily room cleaning, bed making, and fresh towels to ensure your stay is always comfortable.",
         },
         {
             icon: "images/icons/wifi.png",
             title: "Wifi & Internet",
-            desc: "Lorem ipsum proin gravida velit auctor sde re sit amet space.",
+            desc: "Complimentary high-speed WiFi throughout the hotel, perfect for work or entertainment.",
         },
         {
             icon: "images/icons/machine.png",
             title: "Laundry Services",
-            desc: "Lorem ipsum proin gravida velit auctor sde re sit amet space.",
+            desc: "Fast and reliable laundry and dry cleaning services with same-day delivery options.",
         },
         {
             icon: "images/icons/bed.png",
             title: "Breakfast in Bed",
-            desc: "Lorem ipsum proin gravida velit auctor sde re sit amet space.",
+            desc: "Morning breakfast delivered to your room, featuring local and international cuisine choices.",
         },
         {
             icon: "images/icons/swim.png",
             title: "Swimming Pool",
-            desc: "Lorem ipsum proin gravida velit auctor sde re sit amet space.",
+            desc: "Outdoor pool with panoramic mountain views, sun loungers, and poolside beverage service.",
         },
     ]
-
     useEffect(() => {
 
         // REMOVE GSAP ON SMALL SCREENS
@@ -192,12 +191,12 @@ const Services = () => {
                             Discover the Services we offered
                         </p>
 
-                        <h1
+                        <h2
                             ref={headingRef}
                             className='text-3xl md:text-5xl text-[#1a1b1a] max-w-md leading-tight md:leading-[65px]'
                         >
                             Chalets With All the Benefits of a Hotel
-                        </h1>
+                        </h2>
 
                         <div
                             ref={servicesGridRef}

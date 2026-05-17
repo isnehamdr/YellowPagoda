@@ -153,7 +153,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const images = [
   { src: '/images/hall.jpg', alt: 'Hotel hall' },
-  { src: '/images/cycling.jpg', alt: 'Cycling activity' },
+
   { src: '/images/lobby.jpg', alt: 'Hotel lobby' },
   { src: '/images/restro.jpg', alt: 'Restaurant' },
   { src: '/images/swimming.jpg', alt: 'Swimming pool' },

@@ -316,12 +316,12 @@ const RoomPage = () => {
             </p>
 
             {/* Main Heading */}
-            <h1
+            <h2
               ref={mainHeadingRef}
               className="text-5xl md:text-7xl font-medium text-white tracking-wide md:tracking-[8px] leading-tight"
             >
               Stay With Us
-            </h1>
+            </h2>
 
             {/* Sub Heading */}
             <h2

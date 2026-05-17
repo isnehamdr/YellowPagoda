@@ -6,6 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const SITE_URL = "https://www.hotelyellowpagoda.com";
+const generateVerificationCode = () =>
+  Math.floor(100000 + Math.random() * 900000).toString();
 
 // ─── Contact Info Card ────────────────────────────────────────────────────────
 const InfoCard = ({ icon, title, detail }) => (
@@ -62,15 +64,29 @@ const Contact = () => {
 
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [verificationCode, setVerificationCode] = useState(generateVerificationCode);
+  const [enteredCode, setEnteredCode] = useState("");
+  const [verificationError, setVerificationError] = useState("");
 
   const handleChange = (e) =>
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (enteredCode.trim() !== verificationCode) {
+      setVerificationError("The verification code is incorrect. Please enter the new code below.");
+      setVerificationCode(generateVerificationCode());
+      setEnteredCode("");
+      return;
+    }
+
+    setVerificationError("");
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 4000);
     setFormData({ name: "", email: "", subject: "", message: "" });
+    setEnteredCode("");
+    setVerificationCode(generateVerificationCode());
   };
 
   useEffect(() => {
@@ -235,12 +251,12 @@ const Contact = () => {
               </p>
             </div>
 
-            <h1
+            <h2
               ref={mainHeadingRef}
               className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium text-white tracking-[0.05em] leading-none mb-8 md:mb-10"
             >
               Contact Us
-            </h1>
+            </h2>
 
             <h2
               ref={subHeadingRef}
@@ -281,9 +297,9 @@ const Contact = () => {
 
       {/* FORM + IMAGE */}
       <section>
-        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px] lg:min-h-[700px]">
+        <div className="grid grid-cols-1 min-h-[580px] lg:min-h-[760px] lg:grid-cols-2 lg:items-stretch">
           {/* Left — image */}
-          <div className="relative w-full overflow-hidden hidden lg:block">
+          <div className="relative hidden w-full overflow-hidden lg:block lg:min-h-[760px]">
             <img
               src="/images/lobby.jpg"
               alt="Hotel Yellow Pagoda lobby"
@@ -299,7 +315,7 @@ const Contact = () => {
           {/* Right — form */}
           <div
             ref={formRef}
-            className="flex flex-col bg-[#0c0c0a] px-6 py-12 sm:px-10 sm:py-16 lg:px-14 lg:py-20"
+            className="flex min-h-[580px] flex-col justify-center bg-[#0c0c0a] px-6 py-12 sm:px-10 sm:py-16 lg:min-h-[760px] lg:px-14 lg:py-20"
           >
             <div className="mb-10">
               <p className="text-[10px] uppercase tracking-[0.25em] text-white mb-3">Get In Touch</p>
@@ -318,8 +334,8 @@ const Contact = () => {
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  <Field label="Your Name"  name="name"  placeholder="Jane Doe"           value={formData.name}    onChange={handleChange} />
-                  <Field label="Your Email" type="email" name="email" placeholder="jane@example.com" value={formData.email}   onChange={handleChange} />
+                  <Field label="Your Name"  name="name"  placeholder="Ram Bahadur"           value={formData.name}    onChange={handleChange} />
+                  <Field label="Your Email" type="email" name="email" placeholder="ram@example.com" value={formData.email}   onChange={handleChange} />
                 </div>
                 <Field label="Subject" name="subject" placeholder="Room booking, event enquiry…" value={formData.subject} onChange={handleChange} />
                 <Field
@@ -330,6 +346,34 @@ const Contact = () => {
                   onChange={handleChange}
                   rows={5}
                 />
+                <div className="flex flex-col gap-4 border border-white/10 px-4 py-4 sm:px-5">
+                  <div className="flex flex-col gap-1.5">
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-medium">
+                      6-Digit Verification Code
+                    </p>
+                    <p className="text-2xl font-semibold tracking-[0.35em] text-white">
+                      {verificationCode}
+                    </p>
+                    {/* <p className="text-xs text-white/45">
+                      This code regenerates whenever the page reloads and after each failed or successful submission.
+                    </p> */}
+                  </div>
+
+                  <Field
+                    label="Enter Verification Code"
+                    name="enteredCode"
+                    placeholder="Type the 6-digit code"
+                    value={enteredCode}
+                    onChange={(e) => {
+                      setEnteredCode(e.target.value.replace(/\D/g, "").slice(0, 6));
+                      setVerificationError("");
+                    }}
+                  />
+
+                  {verificationError ? (
+                    <p className="text-sm text-red-300">{verificationError}</p>
+                  ) : null}
+                </div>
                 <button
                   type="submit"
                   className="self-start mt-2 px-10 py-3.5 border border-white text-white text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-amber-400/10 active:scale-[0.98] transition-all duration-300"

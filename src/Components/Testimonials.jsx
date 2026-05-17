@@ -203,9 +203,9 @@ const Testimonials = () => {
                 <p ref={subtitleRef} className='font-medium tracking-[1px] uppercase text-sm'>
                     Feedback From Our Dear Guests
                 </p>
-                <h1 ref={headingRef} className='text-3xl sm:text-5xl text-[#1a1b1a] sm:leading-[65px]'>
+                <h2 ref={headingRef} className='text-3xl sm:text-5xl text-[#1a1b1a] sm:leading-[65px]'>
                     What They Say About Us
-                </h1>
+                </h2>
             </div>
 
             <div ref={sliderRef}>

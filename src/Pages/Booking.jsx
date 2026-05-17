@@ -62,9 +62,9 @@ const BookingEngineScript = () => {
             <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6 lg:px-8">
                 <div className="flex flex-col items-center justify-center">
                     <div className="text-center mb-12">
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
                             Select Your Room
-                        </h1>
+                        </h2>
                         <p className="text-lg text-gray-600 max-w-2xl">
                             Choose from our luxurious rooms and suites with stunning mountain views
                         </p>

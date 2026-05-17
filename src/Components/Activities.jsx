@@ -215,7 +215,7 @@ const Activities = () => {
                     </div>
                     <div ref={textSectionRef} className="space-y-6">
                         <p ref={subtitleRef} className='font-medium tracking-[1px] uppercase text-sm'>Unforgattable Experiences</p>
-                        <h1 ref={headingRef} className='text-3xl md:text-5xl text-[#1a1b1a] leading-tight md:leading-[65px]'>Make The Most Of Your Time</h1>
+                        <h2 ref={headingRef} className='text-3xl md:text-5xl text-[#1a1b1a] leading-tight md:leading-[65px]'>Make The Most Of Your Time</h2>
                         <p ref={descriptionRef} className='text-[#333632] leading-[30px] mb-12 text-base md:text-[18px]'>Make the most of your time in Pokhara Valley with our collection of curated packages and experiences. From private wine tours of the valley's most celebrated vineyards to romantic couples' getaways, our team will take care of every detail so you can enjoy a relaxing retreat.</p>
                     </div>
                 </div>
