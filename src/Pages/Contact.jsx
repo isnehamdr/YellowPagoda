@@ -216,7 +216,7 @@ const Contact = () => {
               "name": "Hotel Yellow Pagoda",
               "url": "${SITE_URL}",
               "telephone": "+977-061-457991",
-              "email": "info@yellowpagoda.com",
+              "email": "info@hotelyellowpagoda.com",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Damside RD",
@@ -290,7 +290,7 @@ const Contact = () => {
           <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 text-black">
             <InfoCard href="tel:+977061457991"  icon="/images/call.png"     title="Call Us"  detail="+977 061-457991" />
             <InfoCard icon="/images/location.png" title="Address"  detail="Damside RD, Pokhara, Nepal" />
-            <InfoCard href="mailto:info@yellowpagoda.com" icon="/images/mail.png"     title="Email Us" detail="info@yellowpagoda.com" />
+            <InfoCard href="mailto:info@hotelyellowpagoda.com" icon="/images/mail.png"     title="Email Us" detail="info@hotelyellowpagoda.com" />
           </div>
         </section>
       </section>

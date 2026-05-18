@@ -124,7 +124,7 @@ const Hall = () => {
                 and ample car and motorbike parking, with a capacity ranging from 50 to 500 pax.
               </p>
               <a
-                href="#"
+                href="/contact"
                 className="inline-block border border-white/60 text-white text-xs tracking-[0.2em] uppercase px-7 py-3 hover:bg-white hover:text-gray-900 transition-all duration-300"
               >
                 Request Information

@@ -14,37 +14,37 @@ import Testimonials from "../Components/Testimonials";
 export const SITE_URL = "https://hotelyellowpagoda.com/";
 
 const Home = () => {
-  //  const BookingEngineScript = () => {
-  //     useEffect(() => {
-  //         document.querySelectorAll('script[data-booking-engine]').forEach(s => s.remove());
-  //         document.querySelectorAll('#be-booking-form, #be-search-form').forEach(c => c.innerHTML = '');
+   const BookingEngineScript = () => {
+      useEffect(() => {
+          document.querySelectorAll('script[data-booking-engine]').forEach(s => s.remove());
+          document.querySelectorAll('#be-booking-form, #be-search-form').forEach(c => c.innerHTML = '');
   
-  //         const scriptContent = `
-  //             !function(e,n){
-  //                 var t="bookingengine",o="integration",i=e[t]=e[t]||{},a=i[o]=i[o]||{},r="__cq",c="__loader",d="getElementsByTagName";
-  //                 if(n=n||[],a[r]=a[r]?a[r].concat(n):n,!a[c]){a[c]=!0;var l=e.document,g=l[d]("head")[0]||l[d]("body")[0];
-  //                 !function n(i){if(0!==i.length){var a=l.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://"+i[0]+"/integration/loader.js",
-  //                 a.onerror=a.onload=function(n,i){return function(){e[t]&&e[t][o]&&e[t][o].loaded||(g.removeChild(n),i())}}(a,(function(){n(i.slice(1,i.length))})),g.appendChild(a)}}(
-  //                 ["np-ibe.hopenapi.com","ibe.hopenapi.com","ibe.behopenapi.com"])}}(window, [
-  //                       ["setContext", "BE-INT-barandarestro-com_2025-11-19", "en"],
-  //                     ['embed', 'search-form', { container: 'be-search-form' }]
-  //                 ]);
-  //         `;
+          const scriptContent = `
+              !function(e,n){
+                  var t="bookingengine",o="integration",i=e[t]=e[t]||{},a=i[o]=i[o]||{},r="__cq",c="__loader",d="getElementsByTagName";
+                  if(n=n||[],a[r]=a[r]?a[r].concat(n):n,!a[c]){a[c]=!0;var l=e.document,g=l[d]("head")[0]||l[d]("body")[0];
+                  !function n(i){if(0!==i.length){var a=l.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://"+i[0]+"/integration/loader.js",
+                  a.onerror=a.onload=function(n,i){return function(){e[t]&&e[t][o]&&e[t][o].loaded||(g.removeChild(n),i())}}(a,(function(){n(i.slice(1,i.length))})),g.appendChild(a)}}(
+                  ["np-ibe.hopenapi.com","ibe.hopenapi.com","ibe.behopenapi.com"])}}(window, [
+        ['setContext', 'BE-INT-hotelyellowpagoda_2023-09-10', 'en'],
+                      ['embed', 'search-form', { container: 'be-search-form' }]
+                  ]);
+          `;
   
-  //         const script = document.createElement("script");
-  //         script.type = "text/javascript";
-  //         script.async = true;
-  //         script.setAttribute("data-booking-engine", "true");
-  //         script.textContent = scriptContent.trim();
-  //         document.body.appendChild(script);
+          const script = document.createElement("script");
+          script.type = "text/javascript";
+          script.async = true;
+          script.setAttribute("data-booking-engine", "true");
+          script.textContent = scriptContent.trim();
+          document.body.appendChild(script);
   
-  //         return () => {
-  //             if (script.parentNode) script.parentNode.removeChild(script);
-  //         };
-  //     }, []);
+          return () => {
+              if (script.parentNode) script.parentNode.removeChild(script);
+          };
+      }, []);
   
-  //     return (<></>);
-  // };
+      return (<></>);
+  };
    
   return (
     <>
@@ -131,7 +131,7 @@ const Home = () => {
       <Activities />
       <Services />
       <Testimonials />
-      {/* <BookingEngineScript/> */}
+      <BookingEngineScript/>
   
     </>
   );

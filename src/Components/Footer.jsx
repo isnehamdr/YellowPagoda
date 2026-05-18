@@ -12,23 +12,7 @@ const Footer = () => {
                         <h2 className="text-white text-xl text-center mb-6">Associated With</h2>
                         <div className="bg-black py- px-6 md:px-12 lg:px-24">
                             <div className="flex justify-center  ">
-                                {/* Booking.com logo */}
-                                <a href="https://www.booking.com/hotel/np/yellow-pagoda.html?chal_t=1779017867113&force_referer=https%3A%2F%2Fwww.google.com%2F" target='_blank' aria-label="Booking.com" className="text-gray-400 hover:text-white transition-colors duration-300">
-                                    <img
-                                        src="/images/icons/booking.png"
-                                        alt="Booking.com"
-                                        className="w-18 object-cover"
-                                    />
-                                </a>
-
-                                {/* Agoda logo */}
-                                <a href="https://www.agoda.com/yellow-pagoda-hotel/hotel/kathmandu-np.html?cid=1844104&ds=cvgQhHUd6nh%2FGHtP" target='_blank' aria-label="Agoda" className="text-gray-400 hover:text-white transition-colors duration-300">
-                                    <img
-                                        src="/images/icons/agoda.png"
-                                        alt="Agoda"
-                                        className="w-18 object-cover"
-                                    />
-                                </a>
+                               
 
                                 {/* Tripadvisor logo */}
                                 <a href="https://www.tripadvisor.com/Hotel_Review-g293891-d20809404-Reviews-Yellow_Pagoda_Hotel-Pokhara_Gandaki_Zone_Western_Region.html" target='_blank' aria-label="Tripadvisor" className="text-gray-400 hover:text-white transition-colors duration-300">
@@ -85,7 +69,7 @@ const Footer = () => {
                                         Experience luxury and comfort in the heart of Pokhara. Our hotel offers premium amenities and exceptional service for an unforgettable stay.
                                     </p>
                                     <div className="flex space-x-4">
-                                        <a href="https://www.facebook.com/hotelyellowpagodapokhara" target='_blank' className="text-white hover:text-yellow-500 transition">
+                                        <a href="https://www.facebook.com/hotelyellowpagodapkr" target='_blank' className="text-white hover:text-yellow-500 transition">
                                             <FaFacebook size={20} />
                                         </a>
                                        
@@ -114,17 +98,17 @@ const Footer = () => {
 </li>
 <li className="flex items-start">
     <FaEnvelope className="mt-1 mr-2 flex-shrink-0" />
-    <a href="mailto:info@yellowpagoda.com" className="hover:underline">
-        info@yellowpagoda.com
+    <a href="mailto:info@hotelyellowpagoda.com" className="hover:underline">
+        info@hotelyellowpagoda.com
     </a>
 </li>
                                     </ul>
-                                    <Link
+                                    {/* <Link
                                         to="/contact"
                                         className="inline-flex items-center mt-4 text-white hover:text-yellow-500 transition"
                                     >
                                         Get Directions <FaArrowRight className="ml-2" />
-                                    </Link>
+                                    </Link> */}
                                 </div>
                             </div>
 

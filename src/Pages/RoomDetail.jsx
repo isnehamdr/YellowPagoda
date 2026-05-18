@@ -672,14 +672,12 @@ const RoomDetail = () => {
                 </div>
 
                 <div className="px-5 sm:px-6 py-5 sm:py-6 bg-gray-50 border-t">
-                  <a
-                    href={room.bookingLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full bg-gray-900 hover:bg-black text-white text-center py-3.5 sm:py-4 rounded-xl md:rounded-2xl font-medium transition-colors text-sm sm:text-base"
-                  >
-                    Book Your Stay
-                  </a>
+                 <Link
+  to="/booking"
+  className="block w-full bg-gray-900 hover:bg-black text-white text-center py-3.5 sm:py-4 rounded-xl md:rounded-2xl font-medium transition-colors text-sm sm:text-base"
+>
+  Book Your Stay
+</Link>
                 </div>
               </div>
             </aside>
